@@ -1,4 +1,24 @@
 # brain_cDNA_discovery
 
 
-`article_analysis` - Analysis of the output of the pipeline for transcript discovery and quantification in Oxford Nanopore Technologies PCR cDNA amplified data.
+## Link to Publication: XXX
+
+`article_analysis` - Data analysis and figure generation for article publication. Uses data from output from `brain_cDNA_discovery/cDNA_comparison`, `brain_cDNA_discovery/proteomics_pipeline`, `brain_cDNA_discovery/epigenetic_analysis`, and some figure created using the scripts in `brain_cDNA_discovery/website`
+
+
+
+`cDNA_pipeline` - In house NextFlow pipeline optimized for analysis of Oxford Nanopore PCR Amplified cDNA sequencing data.
+
+
+`epigenetics_analysis` - Analysis integrating in house Oxford Nanopore cDNA sequencing results with public epigenetic datasets.
+
+
+`proteomics_pipeline` - nf-core NextFlow pipeline used to integrate in house Oxford Nanopore cDNA sequencing results with public Mass Spec data.
+
+`website` - Contains Rshiny app scripts used to create a custom website that generates figures for gene and transcript level queries for the in house Oxford Nanopore cDNA sequencing data used in this publcation. Website URL: 
+
+
+
+
+
+
