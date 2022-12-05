@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --time=5-00:00:00                                         # Time limit for the job (REQUIRED).
+#SBATCH --job-name=GTF_comparisons-%j      # Job name
+#SBATCH --ntasks=8                                              # Number of cores for the job. Same as SBATCH -n 1
+#SBATCH --mem=32G                                                # Total memory requested
+#SBATCH --partition=normal                                      # Partition/queue to run the job in. (REQUIRED)
+#SBATCH -e slurm-%j.err                                         # Error file for this job.
+#SBATCH -o slurm-%j.out                                         # Output file for this job.
+#SBATCH -A coa_mteb223_uksr                                     # Project allocation account name (REQUIRED)
+
+
+their_data=$1
+our_data=$2
+novel_column_alt_value=$3
+output_file=$4
+
+
+
+singularity exec /project/mteb223_uksr/singularity_files/transcriptome_long_reads_GTEx.sif Rscript ./04_identify_novel_transcripts.R $our_data $their_data $output_file $novel_column_alt_value

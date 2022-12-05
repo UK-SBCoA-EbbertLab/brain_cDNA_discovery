@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --time=1-00:00:00             # Time limit for the job (REQUIRED).
+#SBATCH --job-name=split_flow_cells_%j    # Job name
+#SBATCH --mem=1000G                  ## Ask for 512G of RAM
+#SBATCH --partition=jumbo          # Partition/queue to run the job in. (REQUIRED)
+#SBATCH -e create_split_flow_cells_%j.err             # Error file for this job.
+#SBATCH -o create_split_flow_cells_%j.out             # Output file for this job.
+#SBATCH -A coa_jbmi230_uksr     # Project allocation account name (REQUIRED)
+
+
+txt=$1
+fastq=$2
+
+
+source ~/.bash_profile
+module load Miniconda3 && source ~/.bashrc  && conda activate cdna_comparison
+
+
+./make_split_merged_uky_cshl_file.py $1 $2
