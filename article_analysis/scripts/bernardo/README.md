@@ -4,7 +4,7 @@
 
 `01.analysis_for_conferences` - Scripts used to generate figures for conferences and other presentations
 
-`02.discovery_stringency_comparison` - Scripts used to compare the reproducibility of data in different stringency thresholds using FLAIR and Bambu.
+`02.discovery_stringency_comparison` - Scripts to compare the reproducibility of data using different stringency thresholds for FLAIR and Bambu.
 
 `03.novel_gene_and_transcript_stats` - Scripts to calculate/display descriptive statistics for genes and transcripts with a variety of approaches.
 
