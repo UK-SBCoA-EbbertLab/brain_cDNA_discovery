@@ -4,7 +4,7 @@
 ## Link to Publication: XXX
 
 
-`article_analysis` - Data analysis and figure generation for article publication. Uses data from output from `cDNA_comparison`, `proteomics_pipeline`, `epigenetic_analysis`, and some figure created using the scripts in `website`
+`article_analysis` - Data analysis and figure generation for article publication. Uses data from output from `cDNA_comparison`, `proteomics_pipeline`, and `epigenetic_analysis`. Some figures were created using the scripts in `website`
 
 
 
