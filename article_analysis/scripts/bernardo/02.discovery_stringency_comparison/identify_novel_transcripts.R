@@ -15,6 +15,15 @@ get_transcript_end <- function(data_tib) {
 	data_tib$end
 }
 
+# calculate the combined length of the exons
+calculate_transcript_length <- function(data_tib) {
+	data_tib <- data_tib %>% filter(feature == 'exon') %>%
+		rowwise() %>%
+		mutate(exon_length = end - start) %>%
+		ungroup()
+	return(sum(data_tib$exon_length))
+}
+
 
 # calculate the bp difference for the transcripts
 calculate_diff <- function(overlap_tib, data_ours) {
@@ -96,7 +105,7 @@ compare_data <- function(our_tib, their_tib, bp_thresh_array) {
 		separate(novel, thresh_column_names, sep = ",", remove=TRUE) %>% 
 		unnest(cols = c(data)) %>%
 		filter(feature == "transcript") %>%
-		select(seqname, strand, gene_id, transcript_id, start, end, exons, ends_with("bp_thresh"))
+		select(seqname, strand, gene_id, transcript_id, start, end, exons, length_DNA_level, length_transcript_level, ends_with("bp_thresh"))
 
 }
 
@@ -113,7 +122,9 @@ our_tibble = read_tsv(args[1], col_names = c("seqname","source","feature","start
 	mutate(
 	       exons = map_int(data, nrow) -1,
 	       t_start = map_dbl(data, get_transcript_start),
-	       t_end = map_dbl(data, get_transcript_end)
+	       t_end = map_dbl(data, get_transcript_end),
+	       length_DNA_level = t_end - t_start,
+	       length_transcript_level = map_dbl(data, calculate_transcript_length) 
 	) 
 
 # the glinos data transcripts, formatted the same as our novel transcripts
@@ -127,8 +138,10 @@ their_tibble = read_tsv(args[2], col_names =c("seqname","source","feature","star
         mutate(
                exons = map_int(data, nrow) -1,
                t_start = map_dbl(data, get_transcript_start),
-               t_end = map_dbl(data, get_transcript_end)
+               t_end = map_dbl(data, get_transcript_end),
+	       length_DNA_level = t_end - t_start,
+	       length_transcript_level = map_dbl(data, calculate_transcript_length) 
         )
 
-our_novel_stuff <- compare_data(our_tibble, their_tibble, c(20, 100, 200))
+our_novel_stuff <- compare_data(our_tibble, their_tibble, c(1, 5, 10, 20, 50, 100, 200))
 write_tsv(our_novel_stuff, args[3])

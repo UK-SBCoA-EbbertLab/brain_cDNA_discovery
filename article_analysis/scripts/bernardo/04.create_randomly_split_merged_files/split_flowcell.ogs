@@ -7,13 +7,13 @@
 #SBATCH -o create_split_flow_cells_%j.out             # Output file for this job.
 #SBATCH -A coa_jbmi230_uksr     # Project allocation account name (REQUIRED)
 
-
+## Get input
 txt=$1
 fastq=$2
 
-
+## Activate conda environment
 source ~/.bash_profile
 module load Miniconda3 && source ~/.bashrc  && conda activate cdna_comparison
 
-
+## Run scripts
 ./split_flowcell_data.py $1 $2
