@@ -16,4 +16,4 @@ source ~/.bash_profile
 module load Miniconda3 && source ~/.bashrc  && conda activate cdna_comparison
 
 
-./make_split_merged_uky_cshl_file.py $1 $2
+./split_flowcell_data.py $1 $2
