@@ -6,7 +6,7 @@
 
 `02.discovery_stringency_comparison` - Scripts to compare the reproducibility of data using different stringency thresholds for FLAIR and Bambu.
 
-`03.novel_gene_and_transcript_stats` - Scripts to calculate/display descriptive statistics for genes and transcripts with a variety of approaches.
+`03.gene_and_transcripts_descriptive_stats` - Scripts to calculate/display descriptive statistics for genes and transcripts with a variety of approaches.
 
 `04.create_randomly_split_merged_files` - Scripts to radomly split cDNA files for the stringency comparison analysis.
 
