@@ -1,4 +1,4 @@
-# Bernardo
+# scripts/bernardo
 
 `00.exploratory_analysis` - Scripts looking at expression for specific genes/transcripts.
 
