@@ -4,7 +4,7 @@
 ## Link to Publication: XXX
 
 
-`article_analysis` - Data analysis and figure generation for article publication. Uses data from output from `brain_cDNA_discovery/cDNA_comparison`, `brain_cDNA_discovery/proteomics_pipeline`, `brain_cDNA_discovery/epigenetic_analysis`, and some figure created using the scripts in `brain_cDNA_discovery/website`
+`article_analysis` - Data analysis and figure generation for article publication. Uses data from output from `cDNA_comparison`, `proteomics_pipeline`, and `epigenetic_analysis`. Some figures were created using the scripts in `website`
 
 
 
