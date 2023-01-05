@@ -98,6 +98,8 @@ From: ubuntu:22.04
         NOTE THAT VERSIONS OF THE SOFTWARE INSTALLED MAY CHANGE THROUGH TIME IF YOU BUILD THE IMAGE FROM THE RECIPE FILE.
         TO GET THE ORIGINAL VERSION OF THIS CONTAINER PULL IT FROM THE SINGULARITY LIB WITH THE COMMAND:
 
+	singularity pull --arch amd64 library://bernardo-a-heberle/cdna_analysis/bernardo_article_analysis:sha256.7b9f63b038fbf11c4b5aa68eacc96a5058a2a20d74f2a239f0254b335bf4ffda
+
 	
 	For more information about the use of this singularity container access: https://github.com/UK-SBCoA-EbbertLab/brain_cDNA_discovery
 
