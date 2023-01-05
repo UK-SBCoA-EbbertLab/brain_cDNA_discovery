@@ -13,9 +13,6 @@
 
 [Pychopper](https://github.com/epi2me-labs/pychopper)
 
-[TrimGalore](https://github.com/FelixKrueger/TrimGalore)
-
-[Cutadapt](https://cutadapt.readthedocs.io/en/stable/)
 
 ## Quality Control
 
@@ -25,24 +22,17 @@
 
 [MultiQC](https://multiqc.info/)
 
-[FastQC](https://github.com/s-andrews/FastQC)
-
 
 ## Mapping
 
-[STAR](https://github.com/alexdobin/STAR)
-
 [Minimap2](https://github.com/lh3/minimap2)
+
 
 ## Transcriptomics
 
 [GFFread](https://github.com/gpertea/gffread)
 
 [GFFcompare](https://ccb.jhu.edu/software/stringtie/gffcompare.shtml)
-
-[RSEM](https://github.com/deweylab/RSEM)
-
-[Salmon](https://combine-lab.github.io/salmon/)
 
 [StringTie](https://github.com/gpertea/stringtie)
 
