@@ -1,0 +1,103 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%post
+
+        ## Make Shell Noninteractive ##
+        DEBIAN_FRONTEND=noninteractive
+
+        ## Install basic packages and get update
+        apt-get update && apt-get -y install wget git time lsb-release sudo gnupg curl unzip g++ make rsync vim locales libssl-dev libcurl4-openssl-dev libxml2-dev
+
+        ## Set timezone and language for container ##
+        ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+
+        export LANGUAGE=en_US.UTF-8
+        export LANG=en_US.UTF-8
+        export LC_ALL=en_US.UTF-8
+        sudo locale-gen en_US.UTF-8
+
+        echo 'export LANGUAGE="en_US.UTF8"' >> $SINGULARITY_ENVIRONMENT
+        echo 'export LANG="en_US.UTF8"' >> $SINGULARITY_ENVIRONMENT
+        echo 'export LC_ALL="en_US.UTF8"' >> $SINGULARITY_ENVIRONMENT
+
+        ## Install miniconda ##
+        cd /
+        wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+        bash Miniconda3-latest-Linux-x86_64.sh -bfp /conda
+        export PATH="/conda/bin:$PATH"
+        echo 'export PATH="/conda/bin:$PATH"' >> $SINGULARITY_ENVIRONMENT
+        conda config --add channels defaults
+        conda config --add channels bioconda
+
+        ## Install BedTools, SamTools ##
+        conda install -c bioconda bedtools samtools
+
+        ## Install Python Packages - Numpy, Pandas, Regex, MatPlotLib, Seaborn, MatPlotLib_Venn, WordCloud, Plotly, Jupyter Notebooks ##
+        pip install numpy==1.24.1 pandas==1.5.2 regex==2022.10.31 matplotlib==3.6.2 seaborn==0.12.2 matplotlib_venn==0.11.7 wordcloud==1.8.2.2 plotly==5.11.0 notebook==6.5.2
+
+	## Install R ##
+        sudo apt install -y --no-install-recommends software-properties-common dirmngr
+        wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo gpg --dearmor -o /usr/share/keyrings/r-project.gpg
+        echo "deb [signed-by=/usr/share/keyrings/r-project.gpg] https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/" | sudo tee -a /etc/apt/sources.list.d/r-project.list
+        sudo apt update
+        sudo apt install -y r-base r-base-core r-recommended r-base-dev
+
+
+        ## Install R Packages: tidyverse, BiocManager, RNASeqPower, Bambu##
+	R --slave -e 'install.packages("tidyverse")'
+        R --slave -e 'install.packages("BiocManager")'
+	R --slave -e 'BiocManager::install("RNASeqPower")'
+        R --slave -e 'BiocManager::install("bambu")'
+    	
+
+%test
+		
+	## Check if installations are on path and/or display their versions ##
+    	conda --version
+	python --version
+	pip --version
+	R --version
+	bedtools --version
+	samtools --version
+
+	
+	## Check R Libraries
+	R --slave -e 'library("RNASeqPower")'
+	R --slave -e 'library("bambu")'
+	R --slave -e 'library("tidyverse")'
+	
+%labels
+	author Bernardo Aguzzoli Heberle
+	version v0.0.1
+
+%help
+	This is the singularity container used to run the nextflow pipeline found at: https://github.com/UK-SBCoA-EbbertLab/brain_cDNA_discovery. 
+
+	Software included in the container are:
+
+	conda==4.14.0
+	pip==21.2.4
+	python==3.10.8
+		numpy==1.24.1
+		pandas==1.5.2
+		regex==2022.10.31
+		matplotlib==3.6.2
+		seaborn==0.12.2
+		matplotlib_venn==0.11.7
+		wordcloud==1.8.2.2
+		plotly==5.11.0
+		notebook==6.5.2
+	R==4.2.2
+		bambu==3.0.5
+		tidyverse==1.3.2
+		RNASeqPower==1.38.0
+	samtools==1.6
+	bedtools==2.30.0
+
+        NOTE THAT VERSIONS OF THE SOFTWARE INSTALLED MAY CHANGE THROUGH TIME IF YOU BUILD THE IMAGE FROM THE RECIPE FILE.
+        TO GET THE ORIGINAL VERSION OF THIS CONTAINER PULL IT FROM THE SINGULARITY LIB WITH THE COMMAND:
+
+	
+	For more information about the use of this singularity container access: https://github.com/UK-SBCoA-EbbertLab/brain_cDNA_discovery
+
