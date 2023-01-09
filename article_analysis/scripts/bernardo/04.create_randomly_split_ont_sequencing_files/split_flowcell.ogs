@@ -11,9 +11,6 @@
 txt=$1
 fastq=$2
 
-## Activate conda environment
-source ~/.bash_profile
-module load Miniconda3 && source ~/.bashrc  && conda activate cdna_comparison
 
 ## Run scripts
-./split_flowcell_data.py $1 $2
+singularity exec ../../../../singularity_containers/bernardo_article_analysis.sif ./split_flowcell_data.py $1 $2
