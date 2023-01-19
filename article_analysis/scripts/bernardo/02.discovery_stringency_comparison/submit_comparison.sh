@@ -7,8 +7,8 @@
 
 
 ## Loose run comparison, bambu NDR = 1
-sbatch run_identify_novel_transcripts.ogs ../../../data/bernardo/processed/99.other/create_annotations/novel_only_annotations/merged_first_half_loose_annotation_novel_only.gtf \
-    ../../../data/bernardo/processed/99.other/create_annotations/novel_only_annotations/merged_second_half_loose_annotation_novel_only.gtf "ANNOTATED" second_half_annotation_loose.tsv
+sbatch run_identify_novel_transcripts.ogs ../../../data/bernardo/processed/99.other/create_annotations/novel_only_annotations/uky_aged_firstHalf_loose_annotation_novel_only.gtf \
+    ../../../data/bernardo/processed/99.other/create_annotations/novel_only_annotations/uky_aged_secondHalf_loose_annotation_novel_only.gtf "ANNOTATED" second_half_annotation_loose.tsv
 
-sbatch run_identify_novel_transcripts.ogs ../../../data/bernardo/processed/99.other/create_annotations/novel_only_annotations/merged_second_half_loose_annotation_novel_only.gtf \
-    ../../../data/bernardo/processed/99.other/create_annotations/novel_only_annotations/merged_first_half_loose_annotation_novel_only.gtf "ANNOTATED" first_half_annotation_loose.tsv
+sbatch run_identify_novel_transcripts.ogs ../../../data/bernardo/processed/99.other/create_annotations/novel_only_annotations/uky_aged_secondHalf_loose_annotation_novel_only.gtf \
+    ../../../data/bernardo/processed/99.other/create_annotations/novel_only_annotations/uky_aged_firstHalf_loose_annotation_novel_only.gtf "ANNOTATED" first_half_annotation_loose.tsv

@@ -143,5 +143,5 @@ their_tibble = read_tsv(args[2], col_names =c("seqname","source","feature","star
 	       length_transcript_level = map_dbl(data, calculate_transcript_length) 
         )
 
-our_novel_stuff <- compare_data(our_tibble, their_tibble, c(1, 5, 10, 20, 50, 100, 200))
+our_novel_stuff <- compare_data(our_tibble, their_tibble, c(1, 5, 10, 20, 35, 50, 100, 200))
 write_tsv(our_novel_stuff, args[3])

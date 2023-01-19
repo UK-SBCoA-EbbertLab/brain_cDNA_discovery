@@ -16,4 +16,4 @@ output_file=$4
 
 
 
-singularity exec /project/mteb223_uksr/singularity_files/transcriptome_long_reads_GTEx.sif Rscript ./identify_novel_transcripts.R $our_data $their_data $output_file $novel_column_alt_value
+singularity exec ../../../../singularity_containers/bernardo_article_analysis.sif Rscript ./identify_novel_transcripts.R $our_data $their_data $output_file $novel_column_alt_value
