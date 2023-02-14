@@ -47,7 +47,8 @@ From: ubuntu:22.04
         ## Install R Packages: tidyverse, BiocManager, RNASeqPower, Bambu##
 	R --slave -e 'install.packages("tidyverse")'
         R --slave -e 'install.packages("BiocManager")'
-	R --slave -e 'BiocManager::install("RNASeqPower")'
+	R --slave -e 'BiocManager::install("RnaSeqSampleSize")'
+	R --slave -e 'BiocManager::install("DESeq2")'
         R --slave -e 'BiocManager::install("bambu")'
     	
 
@@ -63,7 +64,8 @@ From: ubuntu:22.04
 
 	
 	## Check R Libraries
-	R --slave -e 'library("RNASeqPower")'
+	R --slave -e 'library("RnaSeqSampleSize")'
+	R --slave -e 'library("DESeq2")'
 	R --slave -e 'library("bambu")'
 	R --slave -e 'library("tidyverse")'
 	
@@ -91,7 +93,8 @@ From: ubuntu:22.04
 	R==4.2.2
 		bambu==3.0.5
 		tidyverse==1.3.2
-		RNASeqPower==1.38.0
+		RNASeqPower==2.8.0
+		DESeq2==1.38.3
 	samtools==1.6
 	bedtools==2.30.0
 
