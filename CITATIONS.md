@@ -62,7 +62,9 @@
 
 [Rshiny](https://shiny.rstudio.com/)
 
-[RNASeqPower](https://bioconductor.org/packages/release/bioc/html/RNASeqPower.html)
+[RnaSeqSampleSize](https://bioconductor.org/packages/release/bioc/html/RnaSeqSampleSize.html)
+
+[DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)
 
 ## Python Packages
 
