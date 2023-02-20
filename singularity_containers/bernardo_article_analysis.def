@@ -7,7 +7,8 @@ From: ubuntu:22.04
         DEBIAN_FRONTEND=noninteractive
 
         ## Install basic packages and get update
-        apt-get update && apt-get -y install wget git time lsb-release sudo gnupg curl unzip g++ make rsync vim locales libssl-dev libcurl4-openssl-dev libxml2-dev
+        apt-get update && apt-get -y install wget git time lsb-release sudo gnupg curl unzip g++ make rsync vim locales libssl-dev libcurl4-openssl-dev \
+		libxml2-dev libnlopt-dev cmake libblas-dev liblapack-dev gfortran
 
         ## Set timezone and language for container ##
         ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
@@ -46,11 +47,15 @@ From: ubuntu:22.04
 
         ## Install R Packages: tidyverse, BiocManager, RNASeqPower, Bambu##
 	R --slave -e 'install.packages("tidyverse")'
+	R --slave -e 'install.packages("nloptr")'
+	R --slave -e 'install.packages("readr")'
+        R --slave -e 'install.packages("foreach")'
+        R --slave -e 'install.packages("future")'
+        R --slave -e 'install.packages("doParallel")'
         R --slave -e 'install.packages("BiocManager")'
-	R --slave -e 'BiocManager::install("RnaSeqSampleSize")'
+	R --slave -e 'BiocManager::install("RnaSeqSampleSize", force=TRUE)'
 	R --slave -e 'BiocManager::install("DESeq2")'
         R --slave -e 'BiocManager::install("bambu")'
-    	
 
 %test
 		
@@ -64,11 +69,16 @@ From: ubuntu:22.04
 
 	
 	## Check R Libraries
-	R --slave -e 'library("RnaSeqSampleSize")'
 	R --slave -e 'library("DESeq2")'
 	R --slave -e 'library("bambu")'
 	R --slave -e 'library("tidyverse")'
-	
+	R --slave -e 'library("readr")'
+	R --slave -e 'library("foreach")'
+	R --slave -e 'library("future")'
+	R --slave -e 'library("doParallel")'
+	R --slave -e 'library("parallel")'
+	R --slave -e 'library("RnaSeqSampleSize")'
+
 %labels
 	author Bernardo Aguzzoli Heberle
 	version v0.0.1
@@ -105,4 +115,5 @@ From: ubuntu:22.04
 
 	
 	For more information about the use of this singularity container access: https://github.com/UK-SBCoA-EbbertLab/brain_cDNA_discovery
+
 
