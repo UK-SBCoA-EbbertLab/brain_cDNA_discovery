@@ -9,4 +9,4 @@
 
 
 
-singularity exec ../../../../singularity_containers/bernardo_article_analysis.sif ./extract_new_mito_reads_to_bam.sh
+singularity exec ../../../../../singularity_containers/bernardo_article_analysis.sif ./extract_new_reads_to_bam.sh
