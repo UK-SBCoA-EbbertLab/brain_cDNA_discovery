@@ -31,13 +31,12 @@ dds <- DESeqDataSetFromMatrix(countData = cts,
                               design = ~ condition)
 
 
-
 # PDF device
 pdf("../../../figures/bernardo/04.deseq2/AD_transcript_level_plots.pdf")
 
 for (transcript_id in row.names(cts)) {
 
-    d = plotCounts(dds, gene=transcript_id, intgroup="condition", returnData=TRUE)
+    d = plotCounts(dds, gene=transcript_id, intgroup="condition", returnData=TRUE, normalized=FALSE)
 
     gene_name = converter[which(converter$transcript_id == transcript_id), ]$gene_name
 

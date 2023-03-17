@@ -37,7 +37,7 @@ pdf("../../../figures/bernardo/04.deseq2/AD_gene_level_plots.pdf")
 
 for (gene_id in row.names(cts)) {
 
-    d = plotCounts(dds, gene=gene_id, intgroup="condition", returnData=TRUE)
+    d = plotCounts(dds, gene=gene_id, intgroup="condition", returnData=TRUE, normalized=FALSE)
 
     gene_name = converter[which(converter$gene_id == gene_id), ]$gene_name
 
