@@ -26,12 +26,12 @@ all(rownames(coldata) == colnames(cts_med))
 ## Create DESeq2 object
 dds <- DESeqDataSetFromMatrix(countData = cts,
                               colData = coldata,
-                              design = ~ condition)
+                              design = ~ sex)
 
 ## Create DESeq2 object
 dds_med <- DESeqDataSetFromMatrix(countData = cts_med,
                               colData = coldata,
-                              design = ~ condition)
+                              design = ~ sex)
 
 
 ## DE analysis
@@ -48,8 +48,8 @@ summary(res_med)
 
 
 ## Write results to tsv
-write.table(res, file = "../../../data/bernardo/processed/04.deseq2/multiple_transcripts_results.tsv", sep="\t")
-write.table(res_med, file =  "../../../data/bernardo/processed/04.deseq2/multiple_transcripts_results_med_relevant.tsv", sep="\t")
+write.table(res, file = "../../../data/bernardo/processed/04.deseq2/multiple_transcripts_results_M_vs_F.tsv", sep="\t")
+write.table(res_med, file =  "../../../data/bernardo/processed/04.deseq2/multiple_transcripts_results_med_relevant_M_vs_F.tsv", sep="\t")
 
 
 

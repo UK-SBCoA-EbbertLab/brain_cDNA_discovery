@@ -41,7 +41,7 @@ summary(res)
 
 
 ## Write results to tsv
-write.table(res, file = "../../../data/bernardo/processed/04.deseq2/genes_results.tsv", sep="\t")
+write.table(res, file = "../../../data/bernardo/processed/04.deseq2/genes_AD_vs_CT_results.tsv", sep="\t")
 
 
 
