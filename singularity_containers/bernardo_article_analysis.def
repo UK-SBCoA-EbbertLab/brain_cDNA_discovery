@@ -34,8 +34,8 @@ From: ubuntu:22.04
         ## Install BedTools, SamTools ##
         conda install -c bioconda bedtools samtools
 
-        ## Install Python Packages - Numpy, Pandas, Regex, MatPlotLib, Seaborn, MatPlotLib_Venn, WordCloud, Plotly, Jupyter Notebooks ##
-        pip install numpy==1.24.1 pandas==1.5.2 regex==2022.10.31 matplotlib==3.6.2 seaborn==0.12.2 matplotlib_venn==0.11.7 wordcloud==1.8.2.2 plotly==5.11.0 notebook==6.5.2
+        ## Install Python Packages - Numpy, Pandas,Pysam, Regex, MatPlotLib, Seaborn, MatPlotLib_Venn, WordCloud, Plotly, Jupyter Notebooks ##
+        pip install numpy==1.24.1 pandas==1.5.2 pysam==0.21.0 regex==2022.10.31 matplotlib==3.6.2 seaborn==0.12.2 matplotlib_venn==0.11.7 wordcloud==1.8.2.2 plotly==5.11.0 notebook==6.5.2
 
 	## Install R ##
         sudo apt install -y --no-install-recommends software-properties-common dirmngr
@@ -93,6 +93,7 @@ From: ubuntu:22.04
 	python==3.10.8
 		numpy==1.24.1
 		pandas==1.5.2
+		pysam==0.21.0
 		regex==2022.10.31
 		matplotlib==3.6.2
 		seaborn==0.12.2
