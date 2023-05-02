@@ -37,12 +37,16 @@ pdf("../../../figures/bernardo/04.deseq2/results_SEX_boxplots_gene_level.pdf")
 
 for (gene_id in converter$gene_id) {
 
+    chr = converter$chr[converter$gene_id == gene_id]
     d = plotCounts(dds, gene=gene_id, intgroup="sex", returnData=TRUE, normalized=FALSE)
 
     gene_name = converter[which(converter$gene_id == gene_id), ]$gene_name
 
-    plot = ggplot(d, aes(x=sex, y=count, fill=sex)) +
-    geom_boxplot(alpha=0.5, outlier.shape=NA)+ ggtitle(gene_name) + theme(plot.title = element_text(color="red", size=24, face="bold.italic", hjust = 0.5), legend.position="none") +
+    plot_title = paste(chr, gene_name, sep= " - ")
+    plot_title = paste("chr", plot_title, sep=":")
+
+    plot = ggplot(d, aes(x=sex, y=count, fill=sex)) + ylab("DESeq2 normalized counts") + 
+    geom_boxplot(alpha=0.5, outlier.shape=NA)+ ggtitle(plot_title) + theme(plot.title = element_text(color="red", size=24, face="bold.italic", hjust = 0.5), legend.position="none") +
     geom_point(position=position_jitter(w=0.1,h=0))
     
     print(plot)

@@ -1,6 +1,6 @@
 Every Rscript in this repository was executed using the following singularity command:
 
-`singularity exec ../../../../singularity_containers/bernardo_article_analysis.sif" ./<RSCRIPT>`
+`singularity exec ../../../../singularity_containers/bernardo_article_analysis.sif ./<RSCRIPT>`
 
 `AD_gene_boxplots_AD_vs_CT.R` - Boxplots for AD genes at gene level. Plotting counts for Controls vs Alzheimer's samples.
 
