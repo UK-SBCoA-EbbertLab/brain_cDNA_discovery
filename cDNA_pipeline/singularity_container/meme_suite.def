@@ -1,0 +1,59 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%post
+
+        ## Make Shell Noninteractive ##
+        DEBIAN_FRONTEND=noninteractive
+
+        ## Install basic packages and get update
+        apt-get update && apt-get -y install make gcc g++ wget time locales sudo perl libexpat1-dev ghostscript zlib1g-dev tar gzip default-jdk autoconf automake libtool ant python3
+
+        ## Set timezone and language for container ##
+        ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+
+        export LANGUAGE=en_US.UTF-8
+        export LANG=en_US.UTF-8
+        export LC_ALL=en_US.UTF-8
+        sudo locale-gen en_US.UTF-8
+
+        echo 'export LANGUAGE="en_US.UTF8"' >> $SINGULARITY_ENVIRONMENT
+        echo 'export LANG="en_US.UTF8"' >> $SINGULARITY_ENVIRONMENT
+        echo 'export LC_ALL="en_US.UTF8"' >> $SINGULARITY_ENVIRONMENT
+
+	## Install MEMESuite ##
+	cd /
+	version=5.5.0
+	wget http://meme-suite.org/meme-software/$version/meme-$version.tar.gz
+	tar zxf meme-$version.tar.gz
+	cd meme-$version
+	./configure --prefix=/meme --enable-build-libxml2 --enable-build-libxslt
+	make
+	make install
+	echo 'export PATH="/meme/bin:$PATH"' >> $SINGULARITY_ENVIRONMENT
+
+
+%test
+		
+	## Check if installations are on path and/or display their versions ##
+	meme -version
+
+	
+%labels
+	author Bernardo Aguzzoli Heberle
+	version v1.0.0
+
+%help
+	This is the singularity container used to run the nextflow pipeline found at https://github.com/UK-SBCoA-EbbertLab/brain_cDNA_discovery. 
+
+	Software included in the container are:
+
+	meme==5.5.0
+
+        NOTE THAT VERSIONS OF THE SOFTWARE INSTALLED MAY CHANGE THROUGH TIME IF YOU BUILD THE IMAGE FROM THE RECIPE FILE.
+        TO GET THE ORIGINAL VERSION OF THIS CONTAINER PULL IT FROM THE SINGULARITY LIB WITH THE COMMAND:
+
+	singularity pull --arch amd64 library://bernardo-a-heberle/cdna_analysis/meme_suite:sha256.cd6370655c228734af335070a6c5195627fea6c6314e1ca066a66f2584b992da
+
+	
+	For more information about the use of this singularity container access: https://github.com/UK-SBCoA-EbbertLab/brain_cDNA_discovery

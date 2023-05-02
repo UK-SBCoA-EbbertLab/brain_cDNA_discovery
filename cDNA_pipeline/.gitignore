@@ -1,0 +1,12 @@
+**/work
+**/.*
+**/blat*
+**/!.gitignore
+**/*.sif
+**/*references
+**/results
+**/transcriptome
+**/data
+**/real_workflows
+!.gitignore
+

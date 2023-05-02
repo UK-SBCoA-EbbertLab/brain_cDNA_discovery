@@ -1,0 +1,97 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%post
+
+
+        ## Make Shell Noninteractive ##
+        DEBIAN_FRONTEND=noninteractive
+
+        ## Install basic packages and get update
+        apt-get update && apt-get -y install wget git time lsb-release sudo gnupg curl unzip g++ make rsync vim locales libssl-dev libcurl4-openssl-dev libxml2-dev
+
+        ## Set timezone and language for container ##
+        ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+
+        export LANGUAGE=en_US.UTF-8
+        export LANG=en_US.UTF-8
+        export LC_ALL=en_US.UTF-8
+        sudo locale-gen en_US.UTF-8
+
+        echo 'export LANGUAGE="en_US.UTF8"' >> $SINGULARITY_ENVIRONMENT
+        echo 'export LANG="en_US.UTF8"' >> $SINGULARITY_ENVIRONMENT
+        echo 'export LC_ALL="en_US.UTF8"' >> $SINGULARITY_ENVIRONMENT
+
+
+    	## Install miniconda ##
+	cd /
+	wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    	bash Miniconda3-latest-Linux-x86_64.sh -bfp /conda
+	export PATH="/conda/bin:$PATH"
+    	echo 'export PATH="/conda/bin:$PATH"' >> $SINGULARITY_ENVIRONMENT
+	conda config --add channels bioconda
+	conda config --add channels conda-forge
+        conda config --add channels epi2melabs
+	
+	## Install StringTie, GFFread, GFFcompare, STAR, Salmon, SamTools, MiniMap2 ##
+        conda install -c bioconda samtools
+
+	## Install PycoQC ##
+	pip install pycoQC
+
+	## Install MultiQC ##
+	pip install multiqc
+
+	## Install RseQC ##
+	pip install RSeQC
+
+	## Install Trim Galore ##
+	cd /
+	sudo apt install -y cutadapt
+	sudo apt install -y fastqc
+	curl -fsSL https://github.com/FelixKrueger/TrimGalore/archive/0.6.6.tar.gz -o trim_galore.tar.gz
+	tar xvzf trim_galore.tar.gz
+	echo 'export PATH="/TrimGalore-0.6.6:$PATH"' >> $SINGULARITY_ENVIRONMENT
+
+%test
+		
+	## Check if installations are on path and/or display their versions ##
+    	conda --version
+	python --version
+	pip --version
+	pycoQC --version
+	multiqc --version
+	bam2fq.py --version # RseQC
+	samtools --version
+	fastqc --version
+	cutadapt --version
+	trim_galore --version
+
+%labels
+	author Bernardo Aguzzoli Heberle
+	version v1.0.0
+
+%help
+	This is the singularity container used to run the nextflow pipelines found at (https://github.com/UK-SBCoA-EbbertLab/cDNA-comparison). 
+
+	Software included in the container are:
+
+	conda==22.11.1
+	pip==22.3.1
+	python==3.10.8
+	RseQC==5.0.1
+	pycoQC==2.5.2
+	multiqc==1.13
+	fastQC==0.11.9
+	cutadapt==3.5
+	trim galore==0.6.6
+	samtools==1.6
+
+        NOTE THAT VERSIONS OF THE SOFTWARE INSTALLED WILL CHANGE THROUGH TIME IF YOU BUILD THE IMAGE FROM THE RECIPE FILE.
+        TO GET THE ORIGINAL VERSION OF THIS CONTAINER PULL IT FROM THE SINGULARITY LIB WITH THE COMMAND:  
+
+	singularity pull --arch amd64 library://bernardo-a-heberle/cdna_analysis/quality_control:sha256.527a5b5f4dab01c393b08456a0f0188378d9603fd253f587d63a6171a3bc421d
+
+	
+	For more information about the use of this singularity container access: https://github.com/UK-SBCoA-EbbertLab/cDNA-comparison
+
