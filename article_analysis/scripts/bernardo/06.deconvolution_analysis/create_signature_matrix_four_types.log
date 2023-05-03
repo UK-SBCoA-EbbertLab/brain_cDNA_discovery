@@ -1,0 +1,37 @@
+>Running CIBERSORTxFractions...
+>[Options] single_cell: TRUE
+>[Options] refsample: files/bag222@g.uky.edu/medial_temporal_gyrus_allen_single_cell_data_four_types.tsv
+>[Options] replicates: 5
+>[Options] sampling: 0.5
+>[Options] fraction: 0.75
+>[Options] k.max: 999
+>[Options] q.value: 0.01
+>[Options] G.min: 300
+>[Options] G.max: 500
+>[Options] filter: FALSE
+>[Options] verbose: TRUE
+>[Options] QN: FALSE
+>[Options] outdir: files/bag222@g.uky.edu/results/
+>[Options] label: Job16
+>Making reference sample file.
+>Making phenotype class file.
+>==========Signature Matrix Settings============
+>Pure samples file:  files/bag222@g.uky.edu/results//CIBERSORTx_Job16_medial_temporal_gyrus_allen_single_cell_data_four_types_inferred_refsample.txt 
+>Phenotype classes file:  files/bag222@g.uky.edu/results//CIBERSORTx_Job16_medial_temporal_gyrus_allen_single_cell_data_four_types_inferred_phenoclasses.txt 
+>Minimum number of DEGs to consider from each phenotype for signature matrix set to: 300
+>Maximum number of DEGs to consider from each phenotype for signature matrix set to: 500
+>Q-value for signature matrix construction set to: 0.01 
+>Quantile normalization of input samples is disabled
+>===============================================
+>R version 3.6.0 (2019-04-26)
+>Loaded 20 columns and 36601 rows
+>=============Make Signature Matrix=============
+>Maximum condition number (kappa): 999 
+>35699 DEG expressed across 4 samples were identified
+>Group size: 366, Kappa: 1.83788995378583
+>Best kappa: 1.83788995378583 
+>SVD UpperRightDiag: 17939.8184071031 
+>SVD LowerRightDiag: 9761.09498294457 
+>Your custom signature matrix is ready.
+NULL
+All done.

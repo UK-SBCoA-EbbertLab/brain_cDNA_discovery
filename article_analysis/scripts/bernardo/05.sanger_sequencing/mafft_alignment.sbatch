@@ -13,4 +13,4 @@
 input_fasta=$1
 output=$2
 
-singularity exec ../../../../singularity_containers/bernardo_article_analysis.sif mafft --auto --maxiterate 10000 $input_fasta > $output
+singularity exec ../../../../singularity_containers/bernardo_article_analysis.sif mafft-linsi --ep 0 --genafpair --maxiterate 1000 $input_fasta > $output

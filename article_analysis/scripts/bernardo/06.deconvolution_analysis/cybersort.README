@@ -1,0 +1,35 @@
+STEP 1: Signature matrix file was created using the CYBERSORTx online tool as outlined in Tutorial 1, which can be found here: https://cibersortx.stanford.edu/tutorial.php - The file used as a signature matrix was
+created with the scripts:
+- ./cleanup_allen_middle_temporal_gyrus_data_two_subtypes.ipynb (Analysis using two cell types: Neuronal vs Non-neuronal)
+- ./cleanup_allen_middle_temporal_gyrus_data_four_subtypes.ipynb (Analysis using four cell types: Neuronal vs Astrocyte vs Oligodendrocyte, Microglia)
+
+Details: STEP 1 was ran with default checkbox checking on CYBERSORTx:
+    - Disable quantile normalization = Checked
+
+
+STEP 2: Imputed gene expression, group mode using CYBERSORTx online tool as outlined in Tutorial 4, which can be found here: https://cibersortx.stanford.edu/tutorial.php - The file used as te mixture matrix (Bulk RNAseq)
+was created using the script ./cleanup_bullk_data.ipynb
+
+Details: STEP 2 was ran with default checkbox checking:
+    - Enable batch correction = Unchecked
+    - Disable quantile normalization = Checked
+    - Run in absolute mode = Unchecked
+    - Ran 500 permutations for significance analysis
+
+
+Files used were:
+    - Cell metadata
+    - Gene expression matrix
+
+
+More detailed log files for the online CYBERSORTx job submission can be found under:
+    ./create_signature_matrix_four_types.log - STEP 1 four types
+    ./create_signature_matrix_two_types.log - STEP 1 two types
+    ./four_types_deconvolution.log - STEP 2 four types
+    ./two_types_deconvolution.log - STEP 2 two types
+    
+
+
+
+
+Single cell reference data was obtained from the Allen Brain Atlas, the raw data utilized in this analysis can be found at: https://portal.brain-map.org/atlases-and-data/rnaseq/human-mtg-10x_sea-ad
