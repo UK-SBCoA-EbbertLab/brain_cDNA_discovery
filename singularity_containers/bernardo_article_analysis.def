@@ -51,11 +51,13 @@ From: ubuntu:22.04
 	R --slave -e 'install.packages("readr")'
         R --slave -e 'install.packages("foreach")'
         R --slave -e 'install.packages("future")'
+	R --slave -e 'install.packages("svglite")'
         R --slave -e 'install.packages("doParallel")'
         R --slave -e 'install.packages("BiocManager")'
 	R --slave -e 'BiocManager::install("RnaSeqSampleSize", force=TRUE)'
 	R --slave -e 'BiocManager::install("DESeq2")'
 	R --slave -e 'BiocManager::install("IsoformSwitchAnalyzeR")'
+	R --slave -e 'BiocManager::install("EnhancedVolcano")'
         R --slave -e 'BiocManager::install("bambu")'
 
 %test
@@ -77,10 +79,12 @@ From: ubuntu:22.04
 	R --slave -e 'library("readr")'
 	R --slave -e 'library("foreach")'
 	R --slave -e 'library("future")'
+	R --slave -e 'library("svglite")'
 	R --slave -e 'library("doParallel")'
 	R --slave -e 'library("parallel")'
 	R --slave -e 'library("RnaSeqSampleSize")'
 	R --slave -e 'library("IsoformSwitchAnalyzeR")'	
+	R --slave -e 'library("EnhancedVolcano")'
 
 %labels
 	author Bernardo Aguzzoli Heberle
@@ -109,7 +113,8 @@ From: ubuntu:22.04
 		tidyverse==1.3.2
 		RNASeqPower==2.8.0
 		DESeq2==1.38.3
-		IsoformSwitchAnalyzeR==3.17
+		IsoformSwitchAnalyzeR==1.21.0
+		EnhancedVolcano==1.18.0
 	samtools==1.6
 	bedtools==2.30.0
 	mafft==7.520
@@ -118,7 +123,7 @@ From: ubuntu:22.04
         NOTE THAT VERSIONS OF THE SOFTWARE INSTALLED MAY CHANGE THROUGH TIME IF YOU BUILD THE IMAGE FROM THE RECIPE FILE.
         TO GET THE ORIGINAL VERSION OF THIS CONTAINER PULL IT FROM THE SINGULARITY LIB WITH THE COMMAND:
 
-	singularity pull --arch amd64 library://bernardo-a-heberle/cdna_analysis/bernardo_article_analysis:sha256.7b9f63b038fbf11c4b5aa68eacc96a5058a2a20d74f2a239f0254b335bf4ffda
+	singularity pull --arch amd64 library://bernardo-a-heberle/cdna_analysis/bernardo_article_analysis:latest
 
 	
 	For more information about the use of this singularity container access: https://github.com/UK-SBCoA-EbbertLab/brain_cDNA_discovery

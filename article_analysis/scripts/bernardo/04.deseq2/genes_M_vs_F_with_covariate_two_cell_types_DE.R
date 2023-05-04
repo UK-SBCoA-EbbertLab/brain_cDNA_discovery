@@ -10,17 +10,19 @@ cts <- as.matrix(read.csv("../../../data/bernardo/processed/04.deseq2/gene_count
 
 
 ## Import metadata
-coldata <- read.csv("../../../data/bernardo/processed/04.deseq2/experimental_design_with_cell_populations.tsv", sep="\t", row.names=1)
+coldata <- read.csv("../../../data/bernardo/processed/04.deseq2/experimental_design_with_two_cell_populations.tsv", sep="\t", row.names=1)
 
 head(coldata, 12)
 
 ## Convert proportion_neuronal from numerical to factor
-coldata$proportion_neuronal <- cut(coldata$proportion_neuronal, 3, labels=c('low', 'average', 'high'))
+coldata$proportion_neuronal <- cut(coldata$proportion_neuronal, 3, labels=c('neu_low', 'neu_avg', 'new_high'))
+coldata$proportion_non_neuronal <- cut(coldata$proportion_non_neuronal, 3, labels=c('low_other', 'average_other', 'high_other'))
 
 
 coldata$condition <- factor(coldata$condition)
 coldata$sex <- factor(coldata$sex)
 coldata$proportion_neuronal <- factor(coldata$proportion_neuronal)
+coldata$proportion_non_neuronal <- factor(coldata$proportion_non_neuronal)
 
 head(coldata, 12)
 
@@ -49,7 +51,7 @@ summary(res)
 
 
 ## Write results to tsv
-write.table(res, file = "../../../data/bernardo/processed/04.deseq2/genes_M_vs_F_results_with_covariate.tsv", sep="\t")
+write.table(res, file = "../../../data/bernardo/processed/04.deseq2/genes_M_vs_F_results_with_covariate_two_cell_types.tsv", sep="\t")
 
 
 
