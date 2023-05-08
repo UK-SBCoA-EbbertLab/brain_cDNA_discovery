@@ -90,7 +90,7 @@ From: ubuntu:22.04
         NOTE THAT VERSIONS OF THE SOFTWARE INSTALLED WILL CHANGE THROUGH TIME IF YOU BUILD THE IMAGE FROM THE RECIPE FILE.
         TO GET THE ORIGINAL VERSION OF THIS CONTAINER PULL IT FROM THE SINGULARITY LIB WITH THE COMMAND:  
 
-	singularity pull --arch amd64 library://bernardo-a-heberle/cdna_analysis/quality_control:sha256.527a5b5f4dab01c393b08456a0f0188378d9603fd253f587d63a6171a3bc421d
+	singularity pull --arch amd64 library://ebbertlab/nanopore_cdna/quality_control:sha256.2db86def19a30f36a55ffbf8f999803cace938388f13a0c861c3f75efe49f1e7
 
 	
 	For more information about the use of this singularity container access: https://github.com/UK-SBCoA-EbbertLab/cDNA-comparison
