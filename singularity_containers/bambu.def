@@ -57,7 +57,7 @@ From: ubuntu:22.04
 	NOTE THAT VERSIONS OF THE SOFTWARE INSTALLED WILL CHANGE THROUGH TIME IF YOU BUILD THE IMAGE FROM THE RECIPE FILE.
         TO GET THE ORIGINAL VERSION OF THIS CONTAINER PULL IT FROM THE SINGULARITY LIB WITH THE COMMAND: 
 
-	singularity pull --arch amd64 library://bernardo-a-heberle/cdna_analysis/bambu:sha256.0e14bc0ebf3ca9373d0258276776710dffc156cbb7c62b0eb891157c7d90254b
+	singularity pull --arch amd64 library://ebbertlab/nanopore_cdna/bambu:sha256.c766826dd183d2c09be2ae4b64524954cecc66ea31557483fda249dd34c21c1d
 
 
 	
