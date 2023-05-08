@@ -4,15 +4,11 @@
 
 ### 1) Have a functioning version of Nextflow in your Path.
 
-- On the MCC it can be found under `/project/mteb223_uksr/sequencing_resources/tools/bin/nextflow`
+- Information on how to install NextFlow can be found [here](https://www.nextflow.io/docs/latest/getstarted.html).
           
-- Make sure to run `module load ccs/java/jdk1.8.0_202` on the MCC load Java. Nextflow needs Java to work. I added this command to my `~/.bash_profile` to make life easier.
-          
-### 2) Get the singularity image used for this pipeline:
+### 2) Have a functioning version of Singularity on your Path.
 
-- You can find it on the MCC under: `/project/mteb223_uksr/singularity_files/2022-06-30_cdna_nanopore_pipe.sif`
-         
-- Alternatively you can build the singularity file from scratch using the ".def" file contained here. I do not recommend this as tools could have been updated and not be compatible with the pipeline anymore.
+- Information on how to install Singularity cna be found [here](https://docs.sylabs.io/guides/3.0/user-guide/installation.html)
           
           
 ### 3) Clone this github repo using the command below
@@ -20,27 +16,22 @@
           git clone https://github.com/UK-SBCoA-EbbertLab/cDNA_pipeline
 
 
-### 4) Put the singularity ".sif" file in the `singularity_container` folder. You can use a softlink if preferred.
+### 4) Go into the `./workflows/nextflow.config` file and make any necessary changes:
 
-
-### 5) Go into the `workflows/nextflow.config` file and make any necessary changes:
-
-- Alter slurm job manager parameters and singularity file path to suit your needs and PI affiliation. I don't recommend changing the memory/cpu/time allocated 
-for the job manager. Particularly, make sure the `--account` slurm job parameters are set to `coa_mteb223_uksr`.
+- Alter slurm job manager (or other job manager) parameters to suit your local environment. I don't recommend changing the memory/cpu/time allocated 
+for the job manager.
         
-- DO NOT change the paths to the files specified by the `params.xxx` variables. Those can be set at the time of executing the pipeline.
 
           
-### 6) Make sure you have all the files, "sequencing_summary.txt" files, reference genomes/assemblies files and annotation files you will need to run the pipeline.
+### 5) Make sure you have all the sequencing files and reference genomes/assemblies files and annotation files you will need to run the pipeline.
           
-- ".fastq" -- cDNA sequencing files.
+- ".fastq" -- Nanopore cDNA sequencing files or ".bam" alignment files.
 
-- "sequencing_summary.txt" --- You can create dummy files if you don't have these available for now. This option will be improved in the future.
+- "sequencing_summary.txt" -- These files are not necessary for execution, but if not available the PycoQC quality control step will be skipped.
 
 - refecence/assembly ".fa" file.
 
-- annotation ".gtf" file is preffered. Only use ".gff3" if using CHM13. Pipeline has an option to handle this.
-          
+- annotation ".gtf" file is preffered. Only use ".gff3" if using CHM13. Pipeline has an option to handle this, see `Pipeline parameters for STEP 2`.
 
 
 ## Pipeline parameters
