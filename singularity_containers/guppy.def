@@ -49,7 +49,7 @@ From: tensorflow/tensorflow:latest-gpu
         NOTE THAT VERSIONS OF THE SOFTWARE INSTALLED WILL CHANGE THROUGH TIME IF YOU BUILD THE IMAGE FROM THE RECIPE FILE.
         TO GET THE ORIGINAL VERSION OF THIS CONTAINER PULL IT FROM THE SINGULARITY LIB WITH THE COMMAND:
 
-	singularity pull --arch amd64 library://bernardo-a-heberle/cdna_analysis/guppy:sha256.9a9819832e237723a91274e81a8c803bde20b46e8393c610ad71555cf148065f
+	singularity pull --arch amd64 library://ebbertlab/nanopore_cdna/guppy:sha256.80d73ed421e17199390658662453c2c37c8e64435d8b402822a107247882915f
 
 	
 	For more information about the use of this singularity container access: https://github.com/UK-SBCoA-EbbertLab/cDNA_pipeline
