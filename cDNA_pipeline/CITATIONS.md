@@ -33,10 +33,6 @@
 
 [GFFcompare](https://ccb.jhu.edu/software/stringtie/gffcompare.shtml)
 
-[StringTie](https://github.com/gpertea/stringtie)
-
-[FLAIR](https://github.com/BrooksLabUCSC/flair)
-
 [Bambu](https://github.com/GoekeLab/bambu)
 
 
