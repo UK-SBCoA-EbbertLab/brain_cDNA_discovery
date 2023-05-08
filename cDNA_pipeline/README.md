@@ -51,58 +51,27 @@ for the job manager.
           --cdna_kit          <option for pychopper trimming using adapters from the specific cDNA library version, options are "PCS109", "PCS110", "PCS111">
   
           --is_chm13          <set to "True" if using CHM13 and "False" if not. Fixes CHM13 annotation for compatibility with Bambu and converts to ".gtf">
+          
+          --is_discovery      <logical, if "True" perform transcript discovery and quantification with Bambu, else if "False" perform only
+                              quantification based on the given GTF annotation>
+                              
+          --bambu_track_reads <logical, set to "True" if you want Bambu to keep track of read assignments to transcripts in the output ".RDS" file
+                              from Bambu. Set to "False" if you don't need to keep track of read assignments (smaller files). Default: "False">
   
-  
 
 
-## Examples of the submission of the pipeline can be seen found here `workflow/test_workflows/`, see them below:
+### Submission code used for the analysis contained in this article and repository:
 
-
-### CHM13 without ERCCs
-
-          nextflow ../main.nf --ont_reads_fq "/mnt/gpfs3_amd/condo/mteb223/bag222/data/cdna_comparison_project/2019_ont_data/test_data/*.fastq" \
-              --ont_reads_txt "/mnt/gpfs3_amd/condo/mteb223/bag222/data/cdna_comparison_project/2019_ont_data/test_data/*.txt" \
-              --ref "../../references/chm13v2.0.fa" \
-              --annotation "../../references/CHM13.v2.0.gff3" \
-              --ercc "None" \
-              --out_dir "./CHM13_test/" \
-              --cdna_kit "PCS111" \
-              --is_chm13 "True"  -resume
-
-### CHM13 with ERCCs
-
-          nextflow ../main.nf --ont_reads_fq "/mnt/gpfs3_amd/condo/mteb223/bag222/data/cdna_comparison_project/2019_ont_data/test_data/*.fastq" \
-              --ont_reads_txt "/mnt/gpfs3_amd/condo/mteb223/bag222/data/cdna_comparison_project/2019_ont_data/test_data/*.txt" \
-              --ref "../../references/chm13v2.0_ERCC.fa" \
-              --annotation "../../references/CHM13.v2.0.gff3" \
-              --ercc "../../references/ERCC92.gtf" \
-              --out_dir "./CHM13_ERCC_test/" \
-              --cdna_kit "PCS111" \
-              --is_chm13 "True"  -resume
-    
-#### Notice that for CHM13 you need to concatenate CHM13 and the ERCC reference prior to submitting the pipeline, but the annotations are entered separately and concatenated by the program itself after converting CHM13 annotation to ".gtf" format.
-
-### GRCh38 without ERCCs
-
-          nextflow ../main.nf --ont_reads_fq "/mnt/gpfs3_amd/condo/mteb223/bag222/data/cdna_comparison_project/2019_ont_data/test_data/*.fastq" \
-              --ont_reads_txt "/mnt/gpfs3_amd/condo/mteb223/bag222/data/cdna_comparison_project/2019_ont_data/test_data/*.txt" \
-              --ref "../../references/Homo_sapiens.GRCh38.dna.primary_assembly.fa" \
-              --annotation "../../references/Homo_sapiens.GRCh38.106.gtf" \
-              --out_dir "./GRCh38_test/" \
-              --ercc "None" \
-              --cdna_kit "PCS111" \
-              --is_chm13 "False"  -resume
-
-
-### GRCh38 with ERCCs
-
-          nextflow ../main.nf --ont_reads_fq "/mnt/gpfs3_amd/condo/mteb223/bag222/data/cdna_comparison_project/2019_ont_data/test_data/*.fastq" \
-              --ont_reads_txt "/mnt/gpfs3_amd/condo/mteb223/bag222/data/cdna_comparison_project/2019_ont_data/test_data/*.txt" \
-              --ref "../../references/Homo_sapiens.GRCh38_ERCC.fa" \
-              --annotation "../../references/Homo_sapiens.GRCh38.106_ERCC.gtf" \
-              --out_dir "./GRCh38_ERCC_test/" \
-              --ercc "None" \
-              --cdna_kit "PCS111" \
-              --is_chm13 "False"  -resume
-    
-#### Notice that for GRCh38 the `--ercc` is always set to "None" as there the user can easily concatenate both the GRCh38 reference and the annotation to the ERCC reference and annotation.          
+```
+nextflow ../main.nf --ont_reads_fq "../../../../../../../scratch/bag222/data/ont_data/09-02-2022_uky_6ad_6ct/*.fastq" \
+    --ont_reads_txt "../../../../../../scratch/bag222/data/ont_data/09-02-2022_uky_6ad_6ct/*.txt" \
+    --ref "../../references/Homo_sapiens.GRCh38_ERCC.fa" \
+    --annotation "../../references/Homo_sapiens.GRCh38.107_ERCC.gtf" \
+    --housekeeping "../../references/hg38.HouseKeepingGenes.bed" \
+    --multiqc_config "../../references/multiqc_config.yaml" \
+    --cdna_kit "PCS111" \
+    --out_dir "./ad_vs_ct_pilot_study_february_2023_GRCh38-107_discovery/" \
+    --bambu_track_reads "True" \
+    --is_discovery "True" \
+    --is_chm13 "False"
+ ```
