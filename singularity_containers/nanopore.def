@@ -80,7 +80,7 @@ From: ubuntu:22.04
         NOTE THAT VERSIONS OF THE SOFTWARE INSTALLED WILL CHANGE THROUGH TIME IF YOU BUILD THE IMAGE FROM THE RECIPE FILE.
         TO GET THE ORIGINAL VERSION OF THIS CONTAINER PULL IT FROM THE SINGULARITY LIB WITH THE COMMAND:  singularity pull --arch amd64 library://bernardo-a-heberle/cdna_comparison/cdna_pipe:latest
 
-	singularity pull --arch amd64 library://bernardo-a-heberle/cdna_analysis/nanopore:sha256.c37569b9b0c36cb71d571a7c5ac8580a8aee439e0cea4a7a54e754dad0191225
+	singularity pull --arch amd64 library://ebbertlab/nanopore_cdna/nanopore:sha256.e8cb0f02b0e8b3f89937e88333f3c410eff3eacc53d861f5c04a1768790c6a21
 
 	
 	For more information about the use of this singularity container access: https://github.com/UK-SBCoA-EbbertLab/brain_cDNA_discovery
