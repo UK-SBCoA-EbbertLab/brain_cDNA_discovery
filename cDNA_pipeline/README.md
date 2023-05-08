@@ -31,7 +31,7 @@ for the job manager.
 
 - refecence/assembly ".fa" file.
 
-- annotation ".gtf" file is preffered. Only use ".gff3" if using CHM13. Pipeline has an option to handle this, see `Pipeline parameters for STEP 2`.
+- annotation ".gtf" file is preffered. Only use ".gff3" if using CHM13.
 
 
 ## Pipeline parameters
