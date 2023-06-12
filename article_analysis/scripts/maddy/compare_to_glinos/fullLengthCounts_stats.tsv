@@ -1,0 +1,28 @@
+type	tissue_site_detail	n_transcripts
+nfk	Brain - Cerebellar Hemisphere	663
+nfk	Brain - Frontal Cortex (BA9)	566
+nfk	Brain - Putamen (basal ganglia)	471
+nfk	Cells - Cultured fibroblasts	536
+nfk	Heart - Atrial Appendage	428
+nfk	Heart - Left Ventricle	262
+nfk	Liver	274
+nfk	Lung	458
+nfk	Muscle - Skeletal	441
+nfn	Brain - Cerebellar Hemisphere	148
+nfn	Brain - Frontal Cortex (BA9)	143
+nfn	Brain - Putamen (basal ganglia)	93
+nfn	Cells - Cultured fibroblasts	84
+nfn	Heart - Atrial Appendage	65
+nfn	Heart - Left Ventricle	31
+nfn	Liver	31
+nfn	Lung	60
+nfn	Muscle - Skeletal	77
+mrnfk	Brain - Cerebellar Hemisphere	61
+mrnfk	Brain - Frontal Cortex (BA9)	55
+mrnfk	Brain - Putamen (basal ganglia)	46
+mrnfk	Cells - Cultured fibroblasts	52
+mrnfk	Heart - Atrial Appendage	44
+mrnfk	Heart - Left Ventricle	30
+mrnfk	Liver	34
+mrnfk	Lung	53
+mrnfk	Muscle - Skeletal	39
