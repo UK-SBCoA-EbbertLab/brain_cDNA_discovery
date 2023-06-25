@@ -1,0 +1,30 @@
+# gffcompare v0.11.2 | Command line was:
+#/conda/bin/gffcompare -r ../../../../data/bernardo/processed/99.other/create_annotations/novel_only_annotations/leung_annotation_clean.gtf ../../../../data/bernardo/processed/99.other/create_annotations/novel_only_annotations/high_confidence_novel_bambu.gtf -o our_high_confidence_vs_leung
+#
+
+#= Summary for dataset: ../../../../data/bernardo/processed/99.other/create_annotations/novel_only_annotations/high_confidence_novel_bambu.gtf 
+#     Query mRNAs :     700 in     629 loci  (700 multi-exon transcripts)
+#            (59 multi-transcript loci, ~1.1 transcripts per locus)
+# Reference mRNAs :   59677 in   12903 loci  (57799 multi-exon)
+# Super-loci w/ reference transcripts:      262
+#-----------------| Sensitivity | Precision  |
+        Base level:     0.5     |    28.4    |
+        Exon level:     0.6     |    45.4    |
+      Intron level:     0.6     |    49.4    |
+Intron chain level:     0.2     |    14.7    |
+  Transcript level:     0.2     |    14.7    |
+       Locus level:     0.7     |    15.3    |
+
+     Matching intron chains:     103
+       Matching transcripts:     103
+              Matching loci:      96
+
+          Missed exons:  191515/193255	( 99.1%)
+           Novel exons:     969/2083	( 46.5%)
+        Missed introns:  122080/123310	( 99.0%)
+         Novel introns:     566/1420	( 39.9%)
+           Missed loci:   12641/12903	( 98.0%)
+            Novel loci:     367/629	( 58.3%)
+
+ Total union super-loci across all input datasets: 629 
+700 out of 700 consensus transcripts written in our_high_confidence_vs_leung.annotated.gtf (0 discarded as redundant)

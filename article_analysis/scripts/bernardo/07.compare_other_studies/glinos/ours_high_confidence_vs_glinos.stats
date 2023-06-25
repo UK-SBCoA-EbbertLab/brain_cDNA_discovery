@@ -1,0 +1,30 @@
+# gffcompare v0.11.2 | Command line was:
+#/conda/bin/gffcompare -r ../../../../data/bernardo/processed/99.other/create_annotations/novel_only_annotations/glinos_annotation_clean.gtf ../../../../data/bernardo/processed/99.other/create_annotations/novel_only_annotations/high_confidence_novel_bambu.gtf -o ours_high_confidence_vs_glinos
+#
+
+#= Summary for dataset: ../../../../data/bernardo/processed/99.other/create_annotations/novel_only_annotations/high_confidence_novel_bambu.gtf 
+#     Query mRNAs :     700 in     629 loci  (700 multi-exon transcripts)
+#            (59 multi-transcript loci, ~1.1 transcripts per locus)
+# Reference mRNAs :   93500 in   17397 loci  (88340 multi-exon)
+# Super-loci w/ reference transcripts:      269
+#-----------------| Sensitivity | Precision  |
+        Base level:     0.3     |    26.6    |
+        Exon level:     0.4     |    44.2    |
+      Intron level:     0.3     |    47.5    |
+Intron chain level:     0.1     |     9.3    |
+  Transcript level:     0.1     |     9.3    |
+       Locus level:     0.4     |    10.2    |
+
+     Matching intron chains:      65
+       Matching transcripts:      65
+              Matching loci:      64
+
+          Missed exons:  226206/227782	( 99.3%)
+           Novel exons:     978/2083	( 47.0%)
+        Missed introns:  201127/203195	( 99.0%)
+         Novel introns:     549/1420	( 38.7%)
+           Missed loci:   17127/17397	( 98.4%)
+            Novel loci:     360/629	( 57.2%)
+
+ Total union super-loci across all input datasets: 629 
+700 out of 700 consensus transcripts written in ours_high_confidence_vs_glinos.annotated.gtf (0 discarded as redundant)
