@@ -1,15 +1,13 @@
 # scripts/bernardo
 
-`00.exploratory_analysis` - Scripts looking at expression for specific genes/transcripts.
+`MEME` - Scripts used to generate fasta files for 5' and 3' splice site motiff figures. The fasta files generated with these scripts were submitted to the [MEME motiff online tool](https://meme-suite.org/meme/tools/meme) to generate memes.
 
-`01.analysis_for_conferences` - Scripts used to generate figures for conferences and other presentations
+`cemetery` - Old scripts no longer in use.
 
-`02.discovery_stringency_comparison` - Scripts to compare the reproducibility of data using different stringency thresholds for FLAIR and Bambu.
+`compare_annotations` - Scripts to compare our new transcript annotations to other articles that found new transcripts.
 
-`03.gene_and_transcripts_descriptive_stats` - Scripts to calculate/display descriptive statistics for genes and transcripts with a variety of approaches.
+`deseq2` - Scripts used for differential gene and isoform expression analysis.
 
-`04.create_randomly_split_merged_files` - Scripts to radomly split cDNA files for the stringency comparison analysis.
+`other` - Scripts used to generate annotations for other analyses.
 
-`05.mitochondrial_novel_transcripts_probing` - Scripts to look take a deeper look into novel mitochondrial transcripts discovered with Bambu.
-
-`99.other` - Other miscelaneous analyses.
+`paper_figures` - Scripts used to generate main and supplementary paper figures.
