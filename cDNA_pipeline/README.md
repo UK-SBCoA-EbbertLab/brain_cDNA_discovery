@@ -19,19 +19,25 @@
 ### 4) Go into the `./workflows/nextflow.config` file and make any necessary changes:
 
 - Alter slurm job manager (or other job manager) parameters to suit your local environment. I don't recommend changing the memory/cpu/time allocated 
-for the job manager.
+for the job manager. Also, do not change the singularity parameters. Those commands will automatically pull the necessary containers to run the analysis.
         
 
           
 ### 5) Make sure you have all the sequencing files and reference genomes/assemblies files and annotation files you will need to run the pipeline.
           
-- ".fastq" -- Nanopore cDNA sequencing files or ".bam" alignment files.
+- ".fastq" -- Nanopore cDNA sequencing files.
 
 - "sequencing_summary.txt" -- These files are not necessary for execution, but if not available the PycoQC quality control step will be skipped.
 
 - refecence/assembly ".fa" file.
 
 - annotation ".gtf" file is preffered.
+
+- housekeeping gene/transcripts "hg38.HouseKeepingGenes.bed"
+
+- multiqc configuration "multiqc_config.yaml"
+
+See home directory for this repository to find data needed to reproduce the analysis done in this article.
 
 
 ## Pipeline parameters
