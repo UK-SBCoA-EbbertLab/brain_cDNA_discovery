@@ -1,3 +1,0 @@
-2023-07-04 10:49:35.630952 [guppy/error] Missing required parameter basecalling.model_file --model_file
-Missing required parameter program_options.save_path --save_path
-2023-07-04 10:49:35.632896 [guppy/message] Try 'guppy_basecaller --help' for more information.
