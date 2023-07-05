@@ -8,7 +8,7 @@ Link
 
 ## Repository structure:
 
-`article_analysis` - Data analysis and figure generation for article publication. Uses data from output from `cDNA_pipeline`, and `proteomics_pipeline`, Some figures were created using the scripts in `website`
+`article_analysis` - Scripts used for data analysis and figure generation for article publication. Uses data from output from `cDNA_pipeline`, and `proteomics_pipeline`, Some figures were created using the scripts in `website`
 
 
 `cDNA_pipeline` - In house NextFlow pipeline optimized for analysis of Oxford Nanopore PCR Amplified cDNA sequencing data.
