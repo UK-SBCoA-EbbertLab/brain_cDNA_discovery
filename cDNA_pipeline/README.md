@@ -84,9 +84,13 @@ nextflow ../main.nf --ont_reads_fq "../../../../../../../scratch/bag222/data/ont
 
 ## Directory structure:
 
-`modules` - NextFlow module ".nf" files for different steps in the pipeline
-`subworkflows` - NextFlow subworkflow ".nf" files for different executions of the pipeline
+`modules` - NextFlow module ".nf" files for different steps in the pipeline.
+
+`subworkflows` - NextFlow subworkflow ".nf" files for different executions of the pipeline.
+
 `workflow` - Contains main NextFlow workflow, configuration files, submission scripts, and custom R/Python scripts used in the pipeline.
+
 `CITATION.md` - Citations to tools used in the NextFlow pipeline.
+
 `LICENSE` - License for NextFlow pipeline.
 
