@@ -1,8 +1,10 @@
-# <Article Title>
+# Article Title
 
 ## Link to pre-print:
 
-### This repository contains all code and documentation used for the analysis contained in the article above.
+Link
+
+## This repository contains all code and documentation used for the analysis contained in the article above.
 
 ## Repository structure:
 
