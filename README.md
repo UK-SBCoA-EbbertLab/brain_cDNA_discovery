@@ -14,7 +14,7 @@ Link
 `cDNA_pipeline` - In house NextFlow pipeline optimized for analysis of Oxford Nanopore PCR Amplified cDNA sequencing data.
 
 
-`proteomics_pipeline` - nf-core NextFlow pipeline used to integrate in house Oxford Nanopore cDNA sequencing results with public Mass Spec data.
+`proteomics_pipeline` - Fragpipe pipeline used to validate new transcripts at the protein level using public Mass Spec data.
 
 `website` - Contains Rshiny app scripts that allows users to perform gene queries and visualize RNA isoform expression from the data used in this publication
 URL: 
@@ -27,15 +27,9 @@ Final output files and annotations used in this article are available with docum
 
 Proteomics (Mass spec) data from cell-lines used in this experiment are available at: XXX
 
-Proteomics (Mass spec) data from brain
+Proteomics (Mass spec) data from brain are available at: XXX
 
 ## More information
 
 Each directory within this GitHub repository contains documentation for the analysis performed in that directory.
 If you have any questions please submit and issue.
-
-
-
-
-
-
