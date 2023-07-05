@@ -25,7 +25,7 @@ URL:
 
 Raw nanopore sequencing fastq files generated in this study are available at: XXX
 
-Final output files and annotations generetated in this study are available at: XXX
+Final output files and annotations/references used in this study are available at: XXX
 
 Public proteomics (Mass spec) data from cell-lines used in this experiment are available [here](https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD024364). For more information about this data see: https://pubmed.ncbi.nlm.nih.gov/36959352/
 
