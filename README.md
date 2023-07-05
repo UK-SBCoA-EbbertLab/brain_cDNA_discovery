@@ -16,6 +16,8 @@ Link
 
 `proteomics_pipeline` - Fragpipe pipeline used to validate new transcripts at the protein level using public Mass Spec data.
 
+`singularity_containers` - Directory with container definition files and pull commands. With the exception of the Fragpipe pipeline (`proteomics_pipeline`) and the Rshiny web app (`website`), all the software used in this GitHub repository is in these singularity containers.
+
 `website` - Contains Rshiny app scripts that allows users to perform gene queries and visualize RNA isoform expression from the data used in this publication
 URL: 
 
