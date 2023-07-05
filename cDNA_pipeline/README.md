@@ -13,7 +13,7 @@
           
 ### 3) Clone this github repo using the command below
 
-          git clone https://github.com/UK-SBCoA-EbbertLab/cDNA_pipeline
+          git clone https://github.com/UK-SBCoA-EbbertLab/brain_cDNA_discovery
 
 
 ### 4) Go into the `./workflows/nextflow.config` file and make any necessary changes:
