@@ -18,7 +18,7 @@ Link
 
 `singularity_containers` - Directory with container definition files and pull commands. With the exception of the Fragpipe pipeline (`proteomics_pipeline`) and the Rshiny web app (`website`), all the software used in this GitHub repository is in these singularity containers.
 
-`website` - Contains Rshiny app scripts that allows users to perform gene queries and visualize RNA isoform expression from the data used in this publication
+`website` - Contains Rshiny app scripts that allows users to perform gene queries and visualize RNA isoform expression from the data used in this publication.
 URL: 
 
 ## Data availability
