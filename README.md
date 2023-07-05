@@ -21,13 +21,13 @@ URL:
 
 ## Data availability
 
-Raw fastq nanopore cDNA files are available at: XXX
+Raw nanopore sequencing fastq files generated in this study are available at: XXX
 
-Final output files and annotations used in this article are available with documentation at: XXX
+Final output files and annotations generetated in this study are available at: XXX
 
-Proteomics (Mass spec) data from cell-lines used in this experiment are available at: XXX
+Public proteomics (Mass spec) data from cell-lines used in this experiment are available [here](https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD024364). For more information about this data see: https://pubmed.ncbi.nlm.nih.gov/36959352/
 
-Proteomics (Mass spec) data from brain are available at: XXX
+Public proteomics (Mass spec) data from brain are available [here](https://www.synapse.org/#!Synapse:syn25006611/wiki/608683). For more information about this data see: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8825285/
 
 ## More information
 
