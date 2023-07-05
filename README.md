@@ -4,7 +4,7 @@
 
 Link
 
-## This repository contains all code and documentation used for the analysis contained in the article above.
+### This repository contains all code and documentation used for the analysis contained in the article above.
 
 ## Repository structure:
 
