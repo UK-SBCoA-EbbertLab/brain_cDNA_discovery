@@ -41,4 +41,4 @@ quality_control.def - definition file for singularity container used to run the 
 
 
 
-### For more information about software versions see the %help section of definition (.def) files for the singularity images.
+### For more information about software versions see the %help section of definition (.def) files in this directory.
