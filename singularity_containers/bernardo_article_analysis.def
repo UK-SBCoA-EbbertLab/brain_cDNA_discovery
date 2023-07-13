@@ -95,7 +95,7 @@ From: ubuntu:22.04
 
 	Software included in the container are:
 
-	conda==4.14.0
+	conda==23.1.1
 	pip==21.2.4
 	python==3.10.8
 		numpy==1.24.1
@@ -111,7 +111,7 @@ From: ubuntu:22.04
 	R==4.2.2
 		bambu==3.0.5
 		tidyverse==1.3.2
-		RNASeqPower==2.8.0
+		RnaSeqSampleSize==2.10.0
 		DESeq2==1.38.3
 		IsoformSwitchAnalyzeR==1.21.0
 		EnhancedVolcano==1.18.0
