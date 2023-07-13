@@ -78,7 +78,7 @@ From: ubuntu:22.04
 	minimap2==2.22-r1101
 
         NOTE THAT VERSIONS OF THE SOFTWARE INSTALLED WILL CHANGE THROUGH TIME IF YOU BUILD THE IMAGE FROM THE RECIPE FILE.
-        TO GET THE ORIGINAL VERSION OF THIS CONTAINER PULL IT FROM THE SINGULARITY LIB WITH THE COMMAND:  singularity pull --arch amd64 library://bernardo-a-heberle/cdna_comparison/cdna_pipe:latest
+        TO GET THE ORIGINAL VERSION OF THIS CONTAINER PULL IT FROM THE SINGULARITY LIB WITH THE COMMAND:
 
 	singularity pull --arch amd64 library://ebbertlab/nanopore_cdna/nanopore:sha256.e8cb0f02b0e8b3f89937e88333f3c410eff3eacc53d861f5c04a1768790c6a21
 
