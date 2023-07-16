@@ -19,17 +19,18 @@ Link
 `singularity_containers` - Directory with container definition files and pull commands. With the exception of the Fragpipe pipeline (`proteomics_pipeline`) and the Rshiny web app (`website`), all the software used in this GitHub repository is in these singularity containers.
 
 `website` - Contains Rshiny app scripts that allows users to perform gene queries and visualize RNA isoform expression from the data used in this publication.
-URL: 
+Access website [here](https://ebbertlab.shinyapps.io/Transcripts_and_counts/)
 
 ## Data availability
 
-Raw nanopore sequencing fastq files generated in this study are available at: XXX
-
-Final output files and annotations/references used in this study are available at: XXX
+Raw nanopore sequencing fastq files generated in this study are available [here](https://www.synapse.org/ebbert_lab_brain_long_read_cDNA_discovery_project)
 
 Public proteomics (Mass spec) data from cell-lines used in this experiment are available [here](https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD024364). For more information about this data see: https://pubmed.ncbi.nlm.nih.gov/36959352/
 
 Public proteomics (Mass spec) data from brain are available [here](https://www.synapse.org/#!Synapse:syn25006611/wiki/608683). For more information about this data see: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8825285/
+
+Final output files and annotations/references used in this study are available at: <zenodo_link>
+
 
 ## More information
 
