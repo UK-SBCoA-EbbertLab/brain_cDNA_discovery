@@ -14,7 +14,7 @@ Link
 `cDNA_pipeline` - In house NextFlow pipeline optimized for analysis of Oxford Nanopore PCR Amplified cDNA sequencing data.
 
 
-`proteomics_pipeline` - Fragpipe pipeline used to validate new transcripts at the protein level using public Mass Spec data.
+`proteomics` - Analysis pipeline to validate new transcripts at the protein level using publicly available Mass Spec data.
 
 `singularity_containers` - Directory with container definition files and pull commands. With the exception of the Fragpipe pipeline (`proteomics_pipeline`) and the Rshiny web app (`website`), all the software used in this GitHub repository is in these singularity containers.
 
