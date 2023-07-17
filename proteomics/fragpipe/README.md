@@ -52,9 +52,9 @@
 	
 	Since there are 14 batches for this data, downstream analysis is slightly different.
 
-	1) Modify `merge_peptides.py` with the correct directory for the peptide.tsv files.
+	1) Modify `Merge_Peptides.ipynb` with the correct directory for the peptide.tsv files.
 
-	2) Open `merge_peptides.py` as a jupyter notebook, run,  and export the column of peptide sequences as a csv file.
+	2) Open `Merge_Peptides.ipynb` as a jupyter notebook, run,  and export the column of peptide sequences as a csv file.
 
 	3) Run `count_peptides` with the peptide sequences csv file that was just created and `peptide_database_uniprot_header_run_MEDIAN_cpm_greater_than_one.fa` to get the number or times each peptide sequence shows up in the database.
 
