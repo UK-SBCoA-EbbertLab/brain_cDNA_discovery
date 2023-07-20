@@ -40,9 +40,9 @@
 	
 	5) Create a column to sum each spectral count entry for each peptide from each sample.
 
-	6) Group by "Protein".
+	6) Group by "Protein" and sum total number of spectral count for proteins.
 
-	7) Filter the total spectral count to only show values > 5.
+	6) Filter Protein level total spectral count for values > 5.
 
 	8) Use the remaining protein IDs to get corresponding list of peptide sequences.
 
@@ -68,16 +68,18 @@
 
 	4) Filter out any peptide sequence that had a count > 1.
 
-	5) Filter "Spectral Count" for values > 5.
+ 	5) Group by "Protein" and sum total number of spectral count for proteins.
+
+	6) Filter Protein level "Spectral Count" for values > 5.
 	
-	6) Run `create_fasta.sh` with  the remaining protein IDs and corresponding peptide sequences to produce a fasta file.
+	7) Run `create_fasta.sh` with  the remaining protein IDs and corresponding peptide sequences to produce a fasta file.
 
- 	7) Perform a blast protein search using the fasta file generated with `create_fasta.sh`. The parameters we used for our blast search can be found on [Zenodo](XXX).
+ 	8) Perform a blast protein search using the fasta file generated with `create_fasta.sh`. The parameters we used for our blast search can be found on [Zenodo](XXX).
 
-  	8) Remove any peptides that have a blast hit with 100% identity match and 100% query coverage from the file created in step 5.
+  	9) Remove any peptides that have a blast hit with 100% identity match and 100% query coverage from the file created in step 5.
 
-   	9) Run steps 6-9 again for the newly created file from step 11.
+   	10) Run steps 5 and 6 again for the newly created file from step 8.
 
-    	10) These proteins with > 5 unique hits are considered validated in the analysis done in the article.
+	11) These proteins with > 5 unique hits are considered validated in the analysis done in the article.
 
 [^1]:This will include Java 9+, [MSFragger](https://msfragger.nesvilab.org/), [Philosopher](https://philosopher.nesvilab.org/), [IonQuant](http://ionquant.nesvilab.org/), and optionally Python 3.9+ with EasyPQP for database splitting and spectral library generation.
