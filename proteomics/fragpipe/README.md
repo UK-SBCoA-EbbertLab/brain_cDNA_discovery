@@ -34,7 +34,7 @@
 	
 	2) Filter the "Protein" column for IDs containing "Bambu" and filter the "Mapped Genes" and "Mapped Proteins" columns for blank entries.
 
-	3) Run `count_peptides.sh` with the remaining peptide sequences and `peptide_database_uniprot_header_run_MEDIAN_cpm_greater_than_one.fa` to get the number of times each peptide sequence shows up in the database.
+	3) Run `../scripts/count_peptides.sh` with the remaining peptide sequences and `peptide_database_uniprot_header_run_MEDIAN_cpm_greater_than_one.fa` to get the number of times each peptide sequence shows up in the database.
 
 	4) Filter out any peptide sequences that had a count > 1.
 	
@@ -46,7 +46,7 @@
 
 	8) Use the remaining protein IDs to get corresponding list of peptide sequences.
 
-	9) Run `create_fasta.sh` with the list of protein IDs and peptide sequences to produce a fasta file.
+	9) Run `../scripts/create_fasta.sh` with the list of protein IDs and peptide sequences to produce a fasta file.
 
  	10) Perform a blast protein search using the fasta file generated with `create_fasta.sh`. The parameters we used for our blast search can be found on [Zenodo](XXX).
 
@@ -60,11 +60,11 @@
 	
 	Since there are 14 batches for this data, downstream analysis is slightly different.
 
-	1) Modify `Merge_Peptides.ipynb` with the correct directory for the peptide.tsv files.
+	1) Modify `../scripts/Merge_Peptides.ipynb` with the correct directory for the peptide.tsv files.
 
-	2) Open `Merge_Peptides.ipynb` as a jupyter notebook, run,  and export the column of peptide sequences as a csv file.
+	2) Open `../scripts/Merge_Peptides.ipynb` as a jupyter notebook, run,  and export the column of peptide sequences as a csv file.
 
-	3) Run `count_peptides` with the peptide sequences csv file that was just created and `peptide_database_uniprot_header_run_MEDIAN_cpm_greater_than_one.fa` to get the number or times each peptide sequence shows up in the database.
+	3) Run `../scripts/count_peptides` with the peptide sequences csv file that was just created and `peptide_database_uniprot_header_run_MEDIAN_cpm_greater_than_one.fa` to get the number or times each peptide sequence shows up in the database.
 
 	4) Filter out any peptide sequence that had a count > 1.
 
@@ -72,7 +72,7 @@
 
 	6) Filter Protein level "Spectral Count" for values > 5.
 	
-	7) Run `create_fasta.sh` with  the remaining protein IDs and corresponding peptide sequences to produce a fasta file.
+	7) Run `../scripts/create_fasta.sh` with  the remaining protein IDs and corresponding peptide sequences to produce a fasta file.
 
  	8) Perform a blast protein search using the fasta file generated with `create_fasta.sh`. The parameters we used for our blast search can be found on [Zenodo](XXX).
 
