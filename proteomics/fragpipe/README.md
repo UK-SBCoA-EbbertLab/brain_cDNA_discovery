@@ -4,7 +4,7 @@
 
 ### 1) Install Fragpipe and necessary dependencies[^1].
 
- - Information on how to install Fragpipe can be found [here](https://fragpipe.nesvilab.org/).
+ - Information on how Fragpipe works and how to install can be found here [here](https://fragpipe.nesvilab.org/).
 
 ### 2) Download public proteomics (mass spec) data.
 
