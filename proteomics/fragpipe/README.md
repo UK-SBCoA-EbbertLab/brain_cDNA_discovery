@@ -18,7 +18,7 @@
 	git clone https://github.com/UK-SBCoA-EbbertLab/brain_cDNA_discovery
 ```
 
-### 4) Modify `fragpipe.workflow`, and `fragpipe_submission_script`:
+### 4) Modify `fragpipe.workflow`, and `fragpipe_submission_script`. The files used for the original submission can be found on `./brain_tissue_submission/` and `./cell_line_submission/`
 
  - Use X11 Forwarding to load the workflow into the Fragpipe GUI and make necessary changes.
  
