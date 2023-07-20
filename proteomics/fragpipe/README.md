@@ -1,4 +1,4 @@
-# proteomics\_pipeline
+# fragpipe
 
 ## Getting Started
 
@@ -8,9 +8,9 @@
 
 ### 2) Download public proteomics (mass spec) data.
 
- - Data from cell-lines can be found [here](https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD024364).
+ - Proteomics (Mass spec) data from cell-lines used in this experiment are publicly available [here](https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD024364). For more information about this data see: https://pubmed.ncbi.nlm.nih.gov/36959352/
 	
- - Data from brain can be found [here]([200~https://www.synapse.org/#!Synapse:syn17015098).
+ - Proteomics (Mass spec) data from round 2 of the ROSMAP TMT brain Proteomics are puclicly available [here](https://www.synapse.org/#!Synapse:syn17015098). For more information about this data see: https://www.nature.com/articles/s41597-020-00650-8
 
 ### 3) Clone this repository using the command below:
 
