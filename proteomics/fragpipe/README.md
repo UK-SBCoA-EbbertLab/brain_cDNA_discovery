@@ -48,6 +48,14 @@
 
 	9) Run `create_fasta.sh` with the list of protein IDs and peptide sequences to produce a fasta file.
 
+ 	10) Perform a blast protein search using the fasta file generated with `create_fasta.sh`. The parameters we used for our blast search can be found on [Zenodo](XXX).
+
+  	11) Remove any peptides that have a blast hit with 100% identity match and 100% query coverage from the file created in step 5.
+
+   	12) Run steps 6-9 again for the newly created file from step 11.
+
+    	13) These proteins with > 5 unique hits are considered validated in the analysis done in the article.
+
 ### Brain
 	
 	Since there are 14 batches for this data, downstream analysis is slightly different.
@@ -63,5 +71,13 @@
 	5) Filter "Spectral Count" for values > 5.
 	
 	6) Run `create_fasta.sh` with  the remaining protein IDs and corresponding peptide sequences to produce a fasta file.
+
+ 	7) Perform a blast protein search using the fasta file generated with `create_fasta.sh`. The parameters we used for our blast search can be found on [Zenodo](XXX).
+
+  	8) Remove any peptides that have a blast hit with 100% identity match and 100% query coverage from the file created in step 5.
+
+   	9) Run steps 6-9 again for the newly created file from step 11.
+
+    	10) These proteins with > 5 unique hits are considered validated in the analysis done in the article.
 
 [^1]:This will include Java 9+, [MSFragger](https://msfragger.nesvilab.org/), [Philosopher](https://philosopher.nesvilab.org/), [IonQuant](http://ionquant.nesvilab.org/), and optionally Python 3.9+ with EasyPQP for database splitting and spectral library generation.
