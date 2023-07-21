@@ -94,3 +94,21 @@ nextflow ../main.nf --ont_reads_fq "../../../../../../../scratch/bag222/data/ont
 
 `LICENSE` - License for NextFlow pipeline.
 
+
+## Pipeline overview
+
+
+  1) Adapter trimming and read strand orientation with `pychopper`.
+  2) Alignment to the human GRCh38 reference genome using `minimap2`.
+  3) Only keeps reads with a mapq score > 10 after alignment using `samtools`.
+  4) Prepares Bambu RDS files for quantification using ENSEMBL annotation version 109 (No new transcript discovery) using `bambu`.
+  5) Performs QC steps using `pycoqc` and `rseqc`.
+  6) Creates a QC report for all files using `multiqc`.
+  7) Quantifies transcripts for all pre-processed RDS files (step 4) at once `bambu`.
+  8) Creates a transcriptome fasta file using `gffread`.
+
+## More information:
+
+We ran 12 aged postmortem human dorsolateral frontal cortex (Brodmann area 9/46) brain samples (50% female) through this pipeline. Samples were sequenced using
+one Oxford Nanopore PromethION R9.4.1 flow cell per sample. We used kit PCS111 (PCR amplified cDNA sequencing) for library preparation. More detailed information about the samples, sequencing protocol, and analysis pipeline can be found in the article publication associated with this project.
+
