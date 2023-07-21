@@ -53,8 +53,8 @@
   	11) Remove any peptides that have a blast hit with 100% identity match and 100% query coverage from the file created in step 5.
 
    	12) Run steps 6-9 again for the newly created file from step 11.
-
-	13) These proteins with > 5 unique hits are considered validated in the analysis done in the article.
+    
+    	13) These proteins with > 5 unique hits are considered validated in the analysis done in the article.
 
 ### Brain
 	
