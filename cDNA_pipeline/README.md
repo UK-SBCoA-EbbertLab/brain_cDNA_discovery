@@ -104,7 +104,7 @@ nextflow ../main.nf --ont_reads_fq "../../../../../../../scratch/bag222/data/ont
   4) Prepares Bambu RDS files for transcript quantification and discovery using ENSEMBL annotation version 107 using `bambu`.
   5) Performs QC steps using `pycoqc` and `rseqc`.
   6) Creates a QC report for all files using `multiqc`.
-  7) Quantifies transcripts for all pre-processed RDS files (step 4) at once `bambu`.
+  7) Quantifies and discovers transcripts for all pre-processed RDS files (step 4) at once `bambu`.
   8) Creates a transcriptome fasta file using `gffread`.
 
 ## More information:
