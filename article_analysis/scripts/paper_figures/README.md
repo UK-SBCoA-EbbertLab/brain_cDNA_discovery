@@ -1,15 +1,13 @@
 # scripts/bernardo
 
-`00.exploratory_analysis` - Scripts looking at expression for specific genes/transcripts.
+`main_paper_figures.ipynb` - main Script used to make the main figures and analysis contained in the body of the paper.
 
-`01.analysis_for_conferences` - Scripts used to generate figures for conferences and other presentations
+`make_volcano_plots_AD_vs_CT_no_intron.R` - Script used to make volcano plots for gene level and transcripts level plots, gene level not including intronic reads.
 
-`02.discovery_stringency_comparison` - Scripts to compare the reproducibility of data using different stringency thresholds for FLAIR and Bambu.
+`results_boxplots_AD_gene_no_intron.R` - Script used to make boxplots at gene level (no intronic reads).
 
-`03.gene_and_transcripts_descriptive_stats` - Scripts to calculate/display descriptive statistics for genes and transcripts with a variety of approaches.
+`results_boxplots_AD_transcript_no_intron.R` - Script used to make boxplots at transcript level.
 
-`04.create_randomly_split_merged_files` - Scripts to radomly split cDNA files for the stringency comparison analysis.
+`submit_R_scripts.sh` - Script used to submit R scripts.
 
-`05.mitochondrial_novel_transcripts_probing` - Scripts to look take a deeper look into novel mitochondrial transcripts discovered with Bambu.
-
-`99.other` - Other miscelaneous analyses.
+`supplementary_paper_figures.ipynb` - Sccript used to make supplementary paper figures..
