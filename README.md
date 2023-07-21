@@ -8,13 +8,14 @@ Link
 
 ## Repository structure:
 
-`article_analysis` - Scripts used for data analysis and figure generation for article publication. Uses data from output from `cDNA_pipeline`, and `proteomics_pipeline`, Some figures were created using the scripts in `website`
+`article_analysis` - Scripts used for data analysis and figure generation for article publication. Uses data from output from `cDNA_pipeline`. Some figures were created using the scripts in `website`
 
 
 `cDNA_pipeline` - In house NextFlow pipeline optimized for analysis of Oxford Nanopore PCR Amplified cDNA sequencing data.
 
 
-`proteomics` - Analysis pipeline to validate new transcripts at the protein level using publicly available Mass Spec data.
+`proteomics` - Analysis pipeline to validate new transcripts at the protein level using publicly available Mass Spec data. Also explains downstream analysis steps and
+contains custom script used for downstream analysis and figure generation.
 
 `singularity_containers` - Directory with container definition files and pull commands. With the exception of the Fragpipe pipeline (`proteomics_pipeline`) and the Rshiny web app (`website`), all the software used in this GitHub repository is in these singularity containers.
 
