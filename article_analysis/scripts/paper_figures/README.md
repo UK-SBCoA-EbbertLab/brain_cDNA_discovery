@@ -10,4 +10,4 @@
 
 `submit_R_scripts.sh` - Script used to submit R scripts.
 
-`supplementary_paper_figures.ipynb` - Sccript used to make supplementary paper figures..
+`supplementary_paper_figures.ipynb` - Script used to make supplementary paper figures..
