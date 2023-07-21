@@ -11,3 +11,6 @@
 `other` - Scripts used to generate annotations for other analyses.
 
 `paper_figures` - Scripts used to generate main and supplementary paper figures.
+
+`start_jupyter.sh` - Script used to start `jupyter notebooks` through singularity container and tunnel the browser images from server to local computer. 
+All `.ipynb` files were ran through `jupyter notebooks` using this script.
