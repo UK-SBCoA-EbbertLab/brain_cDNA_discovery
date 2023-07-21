@@ -1,4 +1,4 @@
-# scripts/bernardo
+# scripts
 
 `main_paper_figures.ipynb` - main Script used to make the main figures and analysis contained in the body of the paper.
 
