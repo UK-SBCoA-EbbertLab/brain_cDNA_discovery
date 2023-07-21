@@ -95,13 +95,13 @@ nextflow ../main.nf --ont_reads_fq "../../../../../../../scratch/bag222/data/ont
 `LICENSE` - License for NextFlow pipeline.
 
 
-## Pipeline overview
+## Pipeline overview (submission used in the article)
 
 
   1) Adapter trimming and read strand orientation with `pychopper`.
   2) Alignment to the human GRCh38 reference genome using `minimap2`.
   3) Only keeps reads with a mapq score > 10 after alignment using `samtools`.
-  4) Prepares Bambu RDS files for quantification using ENSEMBL annotation version 109 (No new transcript discovery) using `bambu`.
+  4) Prepares Bambu RDS files for transcript quantification and discovery using ENSEMBL annotation version 107 using `bambu`.
   5) Performs QC steps using `pycoqc` and `rseqc`.
   6) Creates a QC report for all files using `multiqc`.
   7) Quantifies transcripts for all pre-processed RDS files (step 4) at once `bambu`.
