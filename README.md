@@ -20,7 +20,7 @@ contains custom script used for downstream analysis and figure generation.
 `singularity_containers` - Directory with container definition files and pull commands. With the exception of the Fragpipe pipeline (`proteomics_pipeline`) and the Rshiny web app (`website`), all the software used in this GitHub repository is in these singularity containers.
 
 `website` - Contains Rshiny app scripts that allows users to perform gene queries and visualize RNA isoform expression from the data used in this publication.
-Access website [here](https://ebbertlab.shinyapps.io/Transcripts_and_counts/)
+Access website [here](https://ebbertlab.com/brain_rna_isoform_seq.html))
 
 ## Data availability
 
