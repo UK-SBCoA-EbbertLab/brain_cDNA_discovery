@@ -30,7 +30,7 @@ Proteomics (Mass spec) data from cell-lines used in this experiment are publicly
 
 Proteomics (Mass spec) data from round 2 of the ROSMAP TMT brain Proteomics are puclicly available [here](https://www.synapse.org/#!Synapse:syn17015098). For more information about this data see: https://www.nature.com/articles/s41597-020-00650-8
 
-Final output files from transcriptomics/RNAseq and proteomics analysis and annotations/references used in this study are available at: [<zenodo_link>](https://doi.org/10.5281/zenodo.8174140)
+Final output files from transcriptomics/RNAseq and proteomics analysis and annotations/references used in this study are available [here](https://doi.org/10.5281/zenodo.8174140)
 
 
 ## More information
