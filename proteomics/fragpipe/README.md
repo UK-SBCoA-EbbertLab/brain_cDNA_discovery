@@ -48,7 +48,7 @@
 
 	9) Run `../scripts/create_fasta.sh` with the list of protein IDs and peptide sequences to produce a fasta file.
 
- 	10) Perform a blast protein search using the fasta file generated with `create_fasta.sh`. The parameters we used for our blast search can be found on [Zenodo](https://doi.org/10.5281/zenodo.8174140).
+ 	10) Perform a blast protein search using the fasta file generated with `create_fasta.sh`. The parameters we used for our blast search can be found on [Zenodo](https://doi.org/10.5281/zenodo.8180677).
 
   	11) Remove any peptides that have a blast hit with 100% identity match and 100% query coverage from the file created in step 5.
 
@@ -74,7 +74,7 @@
 	
 	7) Run `../scripts/create_fasta.sh` with  the remaining protein IDs and corresponding peptide sequences to produce a fasta file.
 
- 	8) Perform a blast protein search using the fasta file generated with `create_fasta.sh`. The parameters we used for our blast search can be found on [Zenodo](https://doi.org/10.5281/zenodo.8174140).
+ 	8) Perform a blast protein search using the fasta file generated with `create_fasta.sh`. The parameters we used for our blast search can be found on [Zenodo](https://doi.org/10.5281/zenodo.8180677).
 
   	9) Remove any peptides that have a blast hit with 100% identity match and 100% query coverage from the file created in step 5.
 
