@@ -8,7 +8,7 @@ process MINIMAP2_cDNA {
         val(id)
         path(fastq)
         path(index)
-        path(txt)
+        val(txt)
 
     output:
         val("$id"), emit: id
@@ -18,7 +18,7 @@ process MINIMAP2_cDNA {
         path("${id}_mapped_filtered_sorted.bam"), emit: bam_mapped
         path("${id}_mapped_filtered_sorted.bam.bai"), emit: bai_mapped
         path("*all*stat"), emit: QC_out
-        path("$txt"), emit: txt
+        val("$txt"), emit: txt
 
     script:
         """
