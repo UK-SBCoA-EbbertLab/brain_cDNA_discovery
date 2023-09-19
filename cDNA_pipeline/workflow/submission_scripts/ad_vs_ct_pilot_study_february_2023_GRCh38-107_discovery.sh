@@ -11,4 +11,4 @@ nextflow ../main.nf --ont_reads_fq "../../../../../../../scratch/bag222/data/ont
     --out_dir "./ad_vs_ct_pilot_study_february_2023_GRCh38-107_discovery/" \
     --bambu_track_reads "True" \
     --is_discovery "True" \
-    --is_chm13 "False" -resume -bg
+    --is_chm13 "False" -resume

@@ -52,7 +52,14 @@ else {
     }
 
 // Make sure ONT sequencing summary and fastq files are in the same order
-ont_reads_txt = ont_reads_txt.toSortedList( { a, b -> a.baseName <=> b.baseName } ).flatten()
+
+if (params.ont_reads_txt == "None") {
+    ont_reads_txt = Channel.value(params.ont_reads_txt)
+}   else {
+    // Make sure ONT sequencing summary and fastq files are in the same order
+    ont_reads_txt = ont_reads_txt.toSortedList( { a, b -> a.baseName <=> b.baseName } ).flatten()
+}
+
 ont_reads_fq = ont_reads_fq.toSortedList( { a, b -> a[0] <=> b[0] } ).flatten().buffer(size:2)
 
 workflow {
