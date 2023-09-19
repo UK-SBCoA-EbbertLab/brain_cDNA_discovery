@@ -10,7 +10,7 @@ include {BAMBU_PREP_DISCOVERY; BAMBU_PREP_QUANT; BAMBU_DISCOVERY; BAMBU_QUANT} f
 include {STRINGTIE_ONT_cDNA} from '../modules/stringtie'
 include {GFFCOMPARE} from '../modules/gffcompare'
 include {MAKE_TRANSCRIPTOME} from '../modules/make_transcriptome'
-include {MULTIQC_GRCh38 ; MULTIQC_CHM13} from '../modules/multiqc'
+include {MULTIQC_GRCh38 ; MULTIQC_GRCh38_NOPYCO ; MULTIQC_CHM13 ; MULTIQC_CHM13_NOPYCO} from '../modules/multiqc'
 
 
 workflow NANOPORE_cDNA {
@@ -32,12 +32,22 @@ workflow NANOPORE_cDNA {
         MAKE_INDEX_cDNA(ref)
         PYCHOPPER(ont_reads_fq, ont_reads_txt, cdna_kit)
         MINIMAP2_cDNA(PYCHOPPER.out.id, PYCHOPPER.out.fastq,  MAKE_INDEX_cDNA.out, PYCHOPPER.out.txt)
-        PYCOQC(MINIMAP2_cDNA.out.id, MINIMAP2_cDNA.out.fastq, MINIMAP2_cDNA.out.txt, MINIMAP2_cDNA.out.bam_all, MINIMAP2_cDNA.out.bai_all)
+        
+        if (params.ont_reads_txt != "None") {
+            PYCOQC(MINIMAP2_cDNA.out.id, MINIMAP2_cDNA.out.fastq, MINIMAP2_cDNA.out.txt, MINIMAP2_cDNA.out.bam_all, MINIMAP2_cDNA.out.bai_all)
+        }
 
         if (params.is_chm13 == true)
         {
-            MULTIQC_CHM13(MINIMAP2_cDNA.out.QC_out.collect(), PYCOQC.out.multiQC.collect(), PYCHOPPER.out.multiQC.collect(), multiqc_config)
+            
+            if (params.ont_reads_txt != "None") {
+                MULTIQC_CHM13(MINIMAP2_cDNA.out.QC_out.collect(), PYCHOPPER.out.multiQC.collect(), multiqc_config)
+            }
+            else {
+                MULTIQC_CHM13_NOPYCO(MINIMAP2_cDNA.out.QC_out.collect(), PYCOQC.out.multiQC.collect(), PYCHOPPER.out.multiQC.collect(), multiqc_config)
+            }
 
+            }
             if (params.ercc == "None") 
             { 
                 CHM13_GTF(annotation)
@@ -54,7 +64,13 @@ workflow NANOPORE_cDNA {
         else
         {
             RSEQC(MINIMAP2_cDNA.out.bam_mapped.collect(), MINIMAP2_cDNA.out.bai_mapped.collect(), housekeeping)
-            MULTIQC_GRCh38(MINIMAP2_cDNA.out.QC_out.collect(), PYCOQC.out.multiQC.collect(), PYCHOPPER.out.multiQC.collect(), RSEQC.out.multiQC.collect(), multiqc_config)
+            
+            if (params.ont_reads_txt != "None") {
+                MULTIQC_GRCh38(MINIMAP2_cDNA.out.QC_out.collect(), PYCOQC.out.multiQC.collect(), PYCHOPPER.out.multiQC.collect(), RSEQC.out.multiQC.collect(), multiqc_config)
+            } 
+            else {
+                MULTIQC_GRCh38(MINIMAP2_cDNA.out.QC_out.collect(), PYCHOPPER.out.multiQC.collect(), RSEQC.out.multiQC.collect(), multiqc_config)
+            }
         }
         
         if (params.is_discovery == true)

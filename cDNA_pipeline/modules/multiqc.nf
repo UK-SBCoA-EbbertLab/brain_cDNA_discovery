@@ -20,6 +20,27 @@ process MULTIQC_GRCh38 {
         """
 }
 
+process MULTIQC_GRCh38_NOPYCO {
+
+    publishDir "results/${params.out_dir}/QC/multiqc", mode: "copy", overwrite: true
+
+    label 'tiny'
+
+    input:
+        path(QC_1)
+        path(QC_2)
+        path(QC_3)
+        path(multiqc_config)
+
+    output:
+       path "*"
+
+    script:
+        """
+        multiqc -c $multiqc_config -n multiQC_report.html .
+        """
+}
+
 process MULTIQC_CHM13 {
 
     publishDir "results/${params.out_dir}/QC/multiqc", mode: "copy", overwrite: true
@@ -40,3 +61,27 @@ process MULTIQC_CHM13 {
         multiqc -c $multiqc_config -n multiQC_report.html .
         """
 }
+
+process MULTIQC_CHM13_NOPYCO {
+
+    publishDir "results/${params.out_dir}/QC/multiqc", mode: "copy", overwrite: true
+
+    label 'tiny'
+
+    input:
+        path(QC_1)
+        path(QC_2)
+        path(multiqc_config)
+
+    output:
+        path "*"
+
+    script:
+        """
+        multiqc -c $multiqc_config -n multiQC_report.html .
+        """
+}
+
+
+
+
