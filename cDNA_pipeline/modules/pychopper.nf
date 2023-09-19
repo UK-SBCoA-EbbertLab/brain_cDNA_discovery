@@ -7,7 +7,7 @@ process PYCHOPPER {
 
     input:
         tuple val(id), path(fastq)
-        path(txt)
+        val(txt)
         val(cdna_kit)
 
     output:
