@@ -41,13 +41,13 @@ workflow NANOPORE_cDNA {
         {
             
             if (params.ont_reads_txt != "None") {
-                MULTIQC_CHM13(MINIMAP2_cDNA.out.QC_out.collect(), PYCHOPPER.out.multiQC.collect(), multiqc_config)
+                MULTIQC_CHM13(MINIMAP2_cDNA.out.QC_out.collect(), PYCOQC.out.multiQC.collect(), PYCHOPPER.out.multiQC.collect(), multiqc_config)
             }
             else {
-                MULTIQC_CHM13_NOPYCO(MINIMAP2_cDNA.out.QC_out.collect(), PYCOQC.out.multiQC.collect(), PYCHOPPER.out.multiQC.collect(), multiqc_config)
+                MULTIQC_CHM13_NOPYCO(MINIMAP2_cDNA.out.QC_out.collect(), PYCHOPPER.out.multiQC.collect(), multiqc_config)
             }
 
-            }
+            
             if (params.ercc == "None") 
             { 
                 CHM13_GTF(annotation)
@@ -69,7 +69,7 @@ workflow NANOPORE_cDNA {
                 MULTIQC_GRCh38(MINIMAP2_cDNA.out.QC_out.collect(), PYCOQC.out.multiQC.collect(), PYCHOPPER.out.multiQC.collect(), RSEQC.out.multiQC.collect(), multiqc_config)
             } 
             else {
-                MULTIQC_GRCh38(MINIMAP2_cDNA.out.QC_out.collect(), PYCHOPPER.out.multiQC.collect(), RSEQC.out.multiQC.collect(), multiqc_config)
+                MULTIQC_GRCh38_NOPYCO(MINIMAP2_cDNA.out.QC_out.collect(), PYCHOPPER.out.multiQC.collect(), RSEQC.out.multiQC.collect(), multiqc_config)
             }
         }
         
