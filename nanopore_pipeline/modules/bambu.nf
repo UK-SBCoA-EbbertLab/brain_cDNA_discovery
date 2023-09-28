@@ -54,7 +54,7 @@ process BAMBU_DISCOVERY {
 
     publishDir "results/${params.out_dir}/", mode: "copy", overwrite: true
 
-    label 'huge'
+    label 'huge_long'
 
     input:
         path(rc_files)
@@ -86,7 +86,7 @@ process BAMBU_QUANT {
 
     publishDir "results/${params.out_dir}/", mode: "copy", overwrite: true
 
-    label 'medium'
+    label 'huge_long'
 
     input:
         path(rc_files)

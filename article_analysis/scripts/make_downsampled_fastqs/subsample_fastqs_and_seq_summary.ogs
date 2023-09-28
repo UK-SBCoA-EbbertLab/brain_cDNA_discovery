@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH --time=1:00:00             # Time limit for the job (REQUIRED).
+#SBATCH --job-name=split_fastqs_%j    # Job name
+#SBATCH --mem=10G                  ## Ask for 512G of RAM
+#SBATCH --partition=normal          # Partition/queue to run the job in. (REQUIRED)
+#SBATCH -e create_split_fastqs_%j.err             # Error file for this job.
+#SBATCH -o create_split_fastqs_%j.out             # Output file for this job.
+#SBATCH -A coa_mteb223_uksr     # Project allocation account name (REQUIRED)
+
+## Get input
+fastq=$1
+txt=$2
+
+
+## Run scripts
+singularity exec ../../../singularity_containers/bernardo_article_analysis.sif ./subsample_fastqs_and_seq_summary.py $txt $fastq
