@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ## Run nextflow pipeline
-nextflow ../main.nf --illumina_data "/../../../../../scratch/bag222/data/ROSMAP_illumina_RNAseq/DorsoLateralFrontalCortex/*_R{1,2}*.fastq.gz" \
+nextflow ../main.nf --illumina_data "/../../../../../scratch/bag222/data/ROSMAP_illumina_RNAseq/DorsoLateralFrontalCortex/third_fourth/*_R{1,2}*.fastq.gz" \
     --ref "../../../nanopore_pipeline/references/Homo_sapiens.GRCh38_ERCC.fa" \
     --transcriptome "../../../article_analysis/data/raw/nextflow_pipeline_output/transcriptome/transcriptome.fa" \
     --annotation "../../../article_analysis/data/raw/nextflow_pipeline_output/bambu_discovery/extended_annotations.gtf" \
