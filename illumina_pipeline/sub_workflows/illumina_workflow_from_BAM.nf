@@ -1,9 +1,9 @@
 // Import Modules
-include {FILTER_UNIQUE_BAM} from '../modules/filter_bam_unique'
+include {FILTER_UNIQUE_BAM} from '../modules/filter_unique_bam'
 include {SALMON_ALIGNMENT_MODE} from '../modules/salmon'
 
 
-workflow ILLUMINA {
+workflow FILTER_ILLUMINA_UNIQUE {
 
     take:
         transcriptome

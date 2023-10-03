@@ -5,7 +5,7 @@ process FILTER_UNIQUE_BAM {
     label "medium"
 
     input:
-        tuple val(id), path(bam)
+        tuple val(id), path(bam_file)
 
     output:
         val "$id", emit: id
@@ -14,7 +14,7 @@ process FILTER_UNIQUE_BAM {
     script:
         """
         
-        samtools view -b -h -q 255 "${bam}" > "${id}_transcriptome_uniquely_aligned_mapq_255.bam"
+        samtools view -b -h -q 255 "${bam_file}" > "${id}_transcriptome_uniquely_aligned_mapq_255.bam"
 
         """
 

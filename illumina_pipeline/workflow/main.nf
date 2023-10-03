@@ -35,6 +35,8 @@ else {
 
 }
 
+bam.view()
+
 transcriptome = file(params.transcriptome)
 
 workflow {
