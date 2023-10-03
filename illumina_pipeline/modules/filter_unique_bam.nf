@@ -10,11 +10,15 @@ process FILTER_UNIQUE_BAM {
     output:
         val "$id", emit: id
         path "${id}_transcriptome_uniquely_aligned_mapq_255.bam", emit: bam
+        path "*", emit: outty
 
     script:
         """
         
         samtools view -b -h -q 255 "${bam_file}" > "${id}_transcriptome_uniquely_aligned_mapq_255.bam"
+
+        samtools flagstat "${id}_transcriptome_uniquely_aligned_mapq_255.bam" > "${id}_transcriptome_uniquely_aligned_mapq_255.bam.flagstat"
+        samtols idxstat "${id}_transcriptome_uniquely_aligned_mapq_255.bam" > "${id}_transcriptome_uniquely_aligned_mapq_255.bam.idxstat"
 
         """
 
