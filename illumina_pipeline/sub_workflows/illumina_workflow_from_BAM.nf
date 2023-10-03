@@ -6,14 +6,14 @@ include {SALMON_ALIGNMENT_MODE} from '../modules/salmon'
 workflow FILTER_ILLUMINA_UNIQUE {
 
     take:
-        transcriptome
         bam
+        transcriptome
 
     main:
         
         FILTER_UNIQUE_BAM(bam)
         
-        SALMON_ALIGNMENT_MODE(FILTER_UNIQUE_BAM.out.id, FILTER_UNIQUE_BAM.out.bam_trans, transcriptome)
+        SALMON_ALIGNMENT_MODE(FILTER_UNIQUE_BAM.out.id, FILTER_UNIQUE_BAM.out.bam, transcriptome)
 
 }
 

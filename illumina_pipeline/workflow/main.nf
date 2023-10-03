@@ -11,6 +11,7 @@ log.info """
  reference transcriptome                        : ${params.transcriptome}
  housekeeping genes 3' bias assessment          : ${params.housekeeping}
  overhang (combined read size - 1)              : ${params.overhang}
+ illumina bam files                             : ${params.bam}
 """
 
 
@@ -34,8 +35,6 @@ else {
     bam = Channel.fromPath(params.bam).map { file -> tuple(file.baseName, file) }
 
 }
-
-bam.view()
 
 transcriptome = file(params.transcriptome)
 
