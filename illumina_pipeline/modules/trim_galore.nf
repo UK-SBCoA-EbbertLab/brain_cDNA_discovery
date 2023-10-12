@@ -1,24 +1,3 @@
-process DECOMPRESS {
-
-    label "tiny"
-
-    input:
-        tuple val(id), path(file_R1), path(file_R2)
-
-    output:
-        val "$id", emit: id
-        path "*_R1*.fastq", emit: file_R1
-        path "*_R2*.fastq", emit: file_R2
-
-    script:
-        """
-        gzip -f -d $file_R1
-
-        gzip -f -d $file_R2
-        """
-
-}
-
 process TRIM_GALORE {
 
     publishDir "results/${params.out_dir}/trim_galore/"
@@ -27,9 +6,7 @@ process TRIM_GALORE {
     label "small"
 
     input:
-        val(id)
-        path(file_R1)
-        path(file_R2)
+        tuple val(id), path(file_R1), path(file_R2)
 
     output:
         val "$id", emit: id
@@ -40,6 +17,6 @@ process TRIM_GALORE {
 
     script:
         """
-        trim_galore --paired --illumina -j 8 --fastqc "${file_R1}" "${file_R2}" -o ./ --basename "${id}"
+        trim_galore --paired --dont_gzip --illumina -j 8 --fastqc "${file_R1}" "${file_R2}" -o ./ --basename "${id}"
         """
 }
