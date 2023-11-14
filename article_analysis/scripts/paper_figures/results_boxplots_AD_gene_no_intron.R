@@ -40,7 +40,7 @@ for (gene_id in converter$gene_id) {
     
     chr = converter$chr[converter$gene_id == gene_id]
 
-    d = plotCounts(dds, gene=gene_id, intgroup="condition", returnData=TRUE, normalized=FALSE)
+    d = plotCounts(dds, gene=gene_id, intgroup="condition", returnData=TRUE, normalized=TRUE)
 
     gene_name = converter[which(converter$gene_id == gene_id), ]$gene_name
 
