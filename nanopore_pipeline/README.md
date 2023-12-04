@@ -112,3 +112,5 @@ nextflow ../main.nf --ont_reads_fq "../../../../../../../scratch/bag222/data/ont
 We ran 12 aged postmortem human dorsolateral frontal cortex (Brodmann area 9/46) brain samples (50% female) through this pipeline. Samples were sequenced using
 one Oxford Nanopore PromethION R9.4.1 flow cell per sample. We used kit PCS111 (PCR amplified cDNA sequencing) for library preparation. More detailed information about the samples, sequencing protocol, and analysis pipeline can be found in the article publication associated with this project.
 
+
+We also ran the GTEx data found in [Glinos et al.](https://www.nature.com/articles/s41586-022-05035-y) through this pipeline.
