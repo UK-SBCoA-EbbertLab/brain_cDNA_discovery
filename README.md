@@ -8,8 +8,9 @@
 
 `article_analysis` - Scripts used for data analysis and figure generation for article publication. Uses data from output from `cDNA_pipeline`. Some figures were created using the scripts in `website`
 
+`illumina_pipeline` - In house NextFlow pipeline optimezed for analysis of Illumina paired-end short-read sequencing data.
 
-`cDNA_pipeline` - In house NextFlow pipeline optimized for analysis of Oxford Nanopore PCR Amplified cDNA sequencing data.
+`nanopore_pipeline` - In house NextFlow pipeline optimized for analysis of Oxford Nanopore PCR Amplified cDNA sequencing data.
 
 
 `proteomics` - Analysis pipeline to validate new transcripts at the protein level using publicly available Mass Spec data. Also explains downstream analysis steps and
