@@ -52,8 +52,8 @@ See home directory for this repository to find data needed to reproduce the anal
             
           --transcriptome      <path to reference transcriptome ".fa" file>
                               
-          --bam  <Path to aligned ".bam" files. If you have files that are already aligned you can use this parameter to filter reads and only keep reads that uniquely align one transcript
-          in your transcriptome file (MAPQ>255). If you specify this parameter only need to specify a the --transcriptome parameter as a complement, all other parameters will be ignored>
+          --bam                <path to aligned ".bam" files. If you have files that are already aligned you can use this parameter to filter reads and only keep reads that uniquely align one transcript
+                              in your transcriptome file (MAPQ>255). If you specify this parameter only need to specify a the --transcriptome parameter as a complement, all other parameters will be ignored>
   
 
 
@@ -93,19 +93,15 @@ nextflow ../main.nf --bam "./results/ROSMAP_illumina_DorsoLateralPreFrontalCorte
 ## Pipeline overview (submission used in the article)
 
 
-  1) Adapter trimming and read strand orientation with `pychopper`.
-  2) Alignment to the human GRCh38 reference genome using `minimap2`.
-  3) Only keeps reads with a mapq score > 10 after alignment using `samtools`.
-  4) Prepares Bambu RDS files for transcript quantification and discovery using ENSEMBL annotation version 107 using `bambu`.
-  5) Performs QC steps using `pycoqc` and `rseqc`.
-  6) Creates a QC report for all files using `multiqc`.
-  7) Quantifies and discovers transcripts for all pre-processed RDS files (step 4) at once `bambu`.
-  8) Creates a transcriptome fasta file using `gffread`.
+  1) Adapter trimming and quality control of fastq files with `trim_galore`.
+  2) Alignment to reference transcriptome using `STAR`.
+  3) Transcript quantification with `salmon`.
+
+## Alternative submission
+  1) Filtering of aligned reads that are not unique (only keeps reads with MAPQ = 255) with `samtools`
+  2) Transcript quantification with `salmon`
 
 ## More information:
 
-We ran 12 aged postmortem human dorsolateral frontal cortex (Brodmann area 9/46) brain samples (50% female) through this pipeline. Samples were sequenced using
-one Oxford Nanopore PromethION R9.4.1 flow cell per sample. We used kit PCS111 (PCR amplified cDNA sequencing) for library preparation. More detailed information about the samples, sequencing protocol, and analysis pipeline can be found in the article publication associated with this project.
+We obtained publicly available ROSMAP Illumina 150bp paired-end RNAseq data from 251 brain samples (Brodmann area 9/46). Samples were processed using this `illumina_pipeline` NextFlow pipeline. More detailed information about the samples, sequencing protocol, and analysis pipeline can be found in the article publication associated with this project.
 
-
-We also ran the GTEx data found in [Glinos et al.](https://www.nature.com/articles/s41586-022-05035-y) through this pipeline.
