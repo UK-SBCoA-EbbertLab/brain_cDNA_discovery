@@ -79,6 +79,3 @@ From: ubuntu:22.04
 
 	singularity pull --arch amd64 library://bernardo-a-heberle/cdna_analysis/illumina:sha256.271989b636e157fe3032a1339fb3d632b6efe88e8726e79e3d76cdd038035f77 
 
-	
-	For more information about the use of this singularity container access: https://github.com/UK-SBCoA-EbbertLab/cDNA-comparison
-
