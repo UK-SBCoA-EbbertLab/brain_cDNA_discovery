@@ -1,0 +1,84 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%post
+
+
+        ## Make Shell Noninteractive ##
+        DEBIAN_FRONTEND=noninteractive
+
+	## Install basic packages and get update
+        apt-get update && apt-get -y install wget gzip git time lsb-release zlib1g-dev sudo gnupg curl unzip g++ make rsync vim locales libssl-dev libcurl4-openssl-dev libxml2-dev
+
+        ## Set timezone and language for container ##
+        ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+
+        export LANGUAGE=en_US.UTF-8
+        export LANG=en_US.UTF-8
+        export LC_ALL=en_US.UTF-8
+        locale-gen en_US.UTF-8
+
+        echo 'export LANGUAGE="en_US.UTF8"' >> $SINGULARITY_ENVIRONMENT
+        echo 'export LANG="en_US.UTF8"' >> $SINGULARITY_ENVIRONMENT
+        echo 'export LC_ALL="en_US.UTF8"' >> $SINGULARITY_ENVIRONMENT
+
+    	## Install miniconda ##
+	cd /
+	wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    	bash Miniconda3-latest-Linux-x86_64.sh -bfp /conda
+	export PATH="/conda/bin:$PATH"
+    	echo 'export PATH="/conda/bin:$PATH"' >> $SINGULARITY_ENVIRONMENT
+	conda config --add channels bioconda
+	conda config --add channels conda-forge
+	
+
+	## Install GFFread, GFFcompare, STAR, Salmon, Samtools ##
+	conda install -c bioconda gffread gffcompare star salmon 
+	conda install -c bioconda samtools=1.6
+
+        ## Install Trim Galore ##
+        cd /
+        sudo apt install -y cutadapt
+        sudo apt install -y fastqc
+        curl -fsSL https://github.com/FelixKrueger/TrimGalore/archive/0.6.6.tar.gz -o trim_galore.tar.gz
+        tar xvzf trim_galore.tar.gz
+        echo 'export PATH="/TrimGalore-0.6.6:$PATH"' >> $SINGULARITY_ENVIRONMENT	
+
+%test
+		
+	## Check if installations are on path and/or display their versions ##
+    	conda --version
+	STAR --version
+	gffread --version	
+	python --version
+	pip --version
+	samtools --version
+	gffcompare --version
+	
+%labels
+	author Bernardo Aguzzoli Heberle
+	version v1.0.0
+
+%help
+	This is the singularity container used to run the nextflow pipelines found at (https://github.com/UK-SBCoA-EbbertLab/cDNA-comparison). 
+
+	Software included in the container are:
+
+	conda==22.11.1
+	STAR==2.7.10b
+	pip==22.3.1
+	python==3.10.8
+	RSEM==1.3.3
+	gffcompare==0.11.2
+	samtools==1.6
+	stringtie==2.2.1
+	gffread==0.12.7
+
+        NOTE THAT VERSIONS OF THE SOFTWARE INSTALLED WILL CHANGE THROUGH TIME IF YOU BUILD THE IMAGE FROM THE RECIPE FILE.
+        TO GET THE ORIGINAL VERSION OF THIS CONTAINER PULL IT FROM THE SINGULARITY LIB WITH THE COMMAND: 
+
+	singularity pull --arch amd64 library://bernardo-a-heberle/cdna_analysis/illumina:sha256.271989b636e157fe3032a1339fb3d632b6efe88e8726e79e3d76cdd038035f77 
+
+	
+	For more information about the use of this singularity container access: https://github.com/UK-SBCoA-EbbertLab/cDNA-comparison
+
