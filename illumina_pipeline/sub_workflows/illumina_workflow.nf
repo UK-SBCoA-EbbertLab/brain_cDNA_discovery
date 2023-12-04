@@ -1,8 +1,6 @@
 // Import Modules
 include {TRIM_GALORE} from '../modules/trim_galore'
 include {MAKE_STAR_INDEX ; STAR_MAPPING} from '../modules/STAR'
-include {RSEQC} from '../modules/rseqc'
-include {MULTIQC_GRCh38 ; MULTIQC_CHM13} from '../modules/multiqc'
 include {SALMON_ALIGNMENT_MODE} from '../modules/salmon'
 
 
