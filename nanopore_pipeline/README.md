@@ -1,4 +1,4 @@
-# cDNA_pipeline
+# nanopore_pipeline
 
 ## Getting Started
 
