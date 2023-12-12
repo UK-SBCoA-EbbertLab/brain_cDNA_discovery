@@ -1,6 +1,6 @@
 # Article Title
 
-## Link to pre-print: https://pubmed.ncbi.nlm.nih.gov/37609156/
+## Link to pre-print: https://www.biorxiv.org/content/10.1101/2023.08.06.552162v2
 
 ### This repository contains all code and documentation used for the analysis contained in the article above.
 
