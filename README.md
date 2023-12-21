@@ -6,7 +6,7 @@
 
 ## Repository structure:
 
-`article_analysis` - Scripts used for data analysis and figure generation for article publication. Uses data from output from `cDNA_pipeline`. Some figures were created using the scripts in `website`
+`article_analysis` - Scripts used for data analysis and figure generation for article publication. Uses data from output from `illumina_pipeline` and `nanopore_pipeline`. Some figures were created using the scripts in `website`
 
 `illumina_pipeline` - In house NextFlow pipeline optimezed for analysis of Illumina paired-end short-read sequencing data.
 
