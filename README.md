@@ -1,6 +1,6 @@
 # Mapping medically relevant RNA isoform diversity in the aged human frontal cortex with deep long-read RNA-seq
 
-## Link to pre-print: https://www.biorxiv.org/content/10.1101/2023.08.06.552162v2
+## Link to Article: https://doi.org/10.1038/s41587-024-02245-9
 
 ### This repository contains all code and documentation used for the analysis contained in the article above.
 
